@@ -31,24 +31,24 @@ class ServeTwo extends StatelessWidget {
             children: [
               Card(
                 shape: const RoundedRectangleBorder(
-                  side: BorderSide(
-                    color: Colors.blueAccent
-                  ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    side: BorderSide(
+                        color: Colors.blueAccent
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                            borderRadius: const BorderRadius.all(Radius.circular(10)),
-                            child: Image.asset("images/user_image.webp"),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
+                          child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
                             left: 100,
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -100,13 +100,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -114,7 +114,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -166,13 +166,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -180,7 +180,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -232,13 +232,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -246,7 +246,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -298,13 +298,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -312,7 +312,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -364,13 +364,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -378,7 +378,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -430,13 +430,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -444,7 +444,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -496,13 +496,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -510,7 +510,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -562,13 +562,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -576,7 +576,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -628,13 +628,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -642,7 +642,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -694,13 +694,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -708,7 +708,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -760,13 +760,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -774,7 +774,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -826,13 +826,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -840,7 +840,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -892,13 +892,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -906,7 +906,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -958,13 +958,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -972,7 +972,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
@@ -1024,13 +1024,13 @@ class ServeTwo extends StatelessWidget {
                     side: BorderSide(
                         color: Colors.blueAccent
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(5.0),topRight: Radius.circular(5.0)),
                           child: Image.asset("images/user_image.webp"),
                         ),
                         Positioned(
@@ -1038,7 +1038,7 @@ class ServeTwo extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
-                                Icons.heart_broken,
+                                Icons.favorite,
                                 color: Colors.white60,
                               ),
                             )),
