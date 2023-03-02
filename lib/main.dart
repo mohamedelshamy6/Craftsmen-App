@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sw_project/ui/screens/Home/HomePage.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/screens/login_signup/sign_up.dart';
 import 'package:sw_project/ui/screens/login_signup/user_profile_edit.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ServeTwo(),
+      home: HomePage(),
     );
   }
 }
