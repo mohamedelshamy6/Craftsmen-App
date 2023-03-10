@@ -35,8 +35,21 @@ class MainPageView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
-                  child: const Text('Skip'),
+                  onPressed: () {
+                    controller.animateToPage(
+                      2,
+                      duration: const Duration(milliseconds: 750),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Arial',
+                    ),
+                  ),
                 ),
                 SmoothPageIndicator(
                   controller: controller,
@@ -44,11 +57,24 @@ class MainPageView extends StatelessWidget {
                   effect: const WormEffect(
                     activeDotColor: Color(0xff33A1FD),
                     dotColor: Color(0xffBCE0FD),
+                    dotHeight: 15,
+                    dotWidth: 15,
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child: const Text('Skip'),
+                  onPressed: () {
+                    controller.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInOut);
+                  },
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Arial',
+                    ),
+                  ),
                 ),
               ],
             ),
