@@ -10,7 +10,7 @@ class MainPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = PageController();
-
+    var mq = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: const Color(0xffF1F9FF),
       body: Column(
@@ -26,10 +26,10 @@ class MainPageView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              right: 20.0,
-              left: 20.0,
-              bottom: 100,
+            padding: EdgeInsets.only(
+              right: mq.viewInsets.right + 50.0,
+              left: mq.viewInsets.left + 50.0,
+              bottom: mq.viewInsets.bottom + 100.0,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,10 +42,10 @@ class MainPageView extends StatelessWidget {
                       curve: Curves.easeInOut,
                     );
                   },
-                  child: const Text(
-                    'Skip',
+                  child: Text(
+                    'SKIP',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: mq.textScaleFactor + 22,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Arial',
                     ),
@@ -54,23 +54,26 @@ class MainPageView extends StatelessWidget {
                 SmoothPageIndicator(
                   controller: controller,
                   count: 3,
-                  effect: const WormEffect(
-                    activeDotColor: Color(0xff33A1FD),
-                    dotColor: Color(0xffBCE0FD),
-                    dotHeight: 15,
-                    dotWidth: 15,
+                  effect: WormEffect(
+                    activeDotColor: const Color(0xff33A1FD),
+                    dotColor: const Color(0xffBCE0FD),
+                    dotHeight: mq.textScaleFactor + 12,
+                    dotWidth: mq.textScaleFactor + 12,
                   ),
                 ),
                 TextButton(
                   onPressed: () {
+                    if (controller.page == 2) {
+                      Navigator.pushNamed(context, 'loginScreen');
+                    }
                     controller.nextPage(
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeInOut);
                   },
-                  child: const Text(
-                    'Next',
+                  child: Text(
+                    'NEXT',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: mq.textScaleFactor + 22,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Arial',
                     ),
