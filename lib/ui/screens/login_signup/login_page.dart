@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../widgets/custom_tff.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -6,142 +8,172 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.arrow_back,
-                  size: 30,
-                  color: Colors.blue,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          const Text(
-            "تسجيل الدخول",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.blue),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextFormField(
-              textAlign: TextAlign.end,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                  hintText: "البريد الالكتروني",
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextFormField(
-              obscureText: true,
-              textAlign: TextAlign.end,
-              keyboardType: TextInputType.visiblePassword,
-              decoration: InputDecoration(
-                  hintText: "كلمة المرور",
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                InkWell(
-                  child: const Text(
-                    "هل نسيت كلمه المرور؟",
-                    textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            height: 48,
-            width: double.infinity,
-            child: ElevatedButton(
-                child: const Text("تسجيل الدخول"), onPressed: () {}),
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          const Text(
-            "او عن طريق استخدام",
-            style: TextStyle(fontSize: 15, color: Colors.blue),
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                radius: 25,
-                child: IconButton(
-                    icon: const Icon(Icons.facebook), onPressed: () {}),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                radius: 25,
-                child: IconButton(
-                    icon: const Icon(Icons.facebook), onPressed: () {}),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 25,
-                child: IconButton(
-                    icon: const Icon(Icons.facebook,), onPressed: () {}),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20,),
-          TextButton(
-              onPressed: () {},
-              child: TextButton(
-                onPressed: () {},
-                child: const Text("بالفعل لديك حساب؟"),
-              ))
-        ],
+      backgroundColor: const Color(0xffFFFFFF),
+      appBar: AppBar(
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: const Color(0xff2699FB),
+          size: 24.r,
+        ),
+        backgroundColor: const Color(0xffFFFFFF),
       ),
-    )));
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 120.h,
+              bottom: 100.h,
+              left: 25.w,
+              right: 25.w,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  "تسجيل الدخول",
+                  style: TextStyle(
+                    fontFamily: 'Cairo',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp,
+                    color: const Color(
+                      0xff33A1FD,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 60.h),
+                const CustomTFF(
+                  hintText: 'البريد الالكتروني',
+                  kbType: TextInputType.emailAddress,
+                  id: 1,
+                ),
+                SizedBox(height: 16.h),
+                const CustomTFF(
+                  hintText: 'كلمة المرور',
+                  kbType: TextInputType.visiblePassword,
+                  id: 2,
+                ),
+                SizedBox(height: 10.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    InkWell(
+                      child: Text(
+                        "نسيت كلمة المرور؟",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            color: const Color(0xff2699FB),
+                            fontSize: 10.sp,
+                            fontFamily: 'Cairo',
+                            fontWeight: FontWeight.bold),
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                SizedBox(height: 70.h),
+                SizedBox(
+                  height: 48.h,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0.r),
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        "تسجيل الدخول",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontFamily: 'Cairo',
+                          color: const Color(0xffFFFFFF),
+                          fontWeight: FontWeight.w200,
+                        ),
+                      ),
+                      onPressed: () {}),
+                ),
+                SizedBox(height: 43.h),
+                Text(
+                  "أو عن طريق استخدام",
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    fontFamily: 'cairo',
+                    color: const Color(0xff2699FB),
+                  ),
+                ),
+                SizedBox(height: 28.h),
+                SizedBox(
+                  width: 200.w,
+                  height: 56.h,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: const DecorationImage(
+                            image: AssetImage(
+                              'assets/icon_images/fb_logo.png',
+                            ),
+                          ),
+                          border: Border.all(
+                            color: const Color(0xff2699FB),
+                          ),
+                        ),
+                        width: 60.w,
+                      ),
+                      SizedBox(width: 10.w),
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: const DecorationImage(
+                            image: AssetImage(
+                              'assets/icon_images/tw_logo.png',
+                            ),
+                          ),
+                          border: Border.all(
+                            color: const Color(0xff2699FB),
+                          ),
+                        ),
+                        width: 60.w,
+                      ),
+                      SizedBox(width: 10.w),
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: const DecorationImage(
+                            image: AssetImage(
+                              'assets/icon_images/g_logo.png',
+                            ),
+                          ),
+                          border: Border.all(
+                            color: const Color(0xff2699FB),
+                          ),
+                        ),
+                        width: 60.w,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 60.h),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "ليس لديك حساب؟",
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      fontFamily: 'cairo',
+                      color: const Color(0xff2699FB),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

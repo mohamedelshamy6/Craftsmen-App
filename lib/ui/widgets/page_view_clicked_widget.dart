@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomClickedWidget extends StatelessWidget {
   const CustomClickedWidget({
@@ -11,7 +12,6 @@ class CustomClickedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mq = MediaQuery.of(context);
     return Expanded(
       child: GestureDetector(
         onTap: () {},
@@ -23,25 +23,23 @@ class CustomClickedWidget extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                  right: mq.viewInsets.right + 100,
+                  right: 70.w,
                 ),
                 child: Text(
                   title,
                   style: TextStyle(
                     fontFamily: 'Cairo',
                     fontWeight: FontWeight.bold,
-                    fontSize: mq.textScaleFactor + 24,
+                    fontSize: 20.sp,
                     color: const Color(0xff33A1FD),
                   ),
                 ),
               ),
               Center(
-                child: SizedBox(
-                  height: mq.size.height / 3,
-                  width: mq.size.width / 2,
-                  child: Image.asset(
-                    imageTitle,
-                  ),
+                child: Image.asset(
+                  imageTitle,
+                  height: 260.h,
+                  width: 260.w,
                 ),
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomPageViewContent extends StatelessWidget {
   const CustomPageViewContent({
@@ -14,10 +15,10 @@ class CustomPageViewContent extends StatelessWidget {
     var mq = MediaQuery.of(context);
     return Padding(
       padding: EdgeInsets.only(
-        right: mq.viewInsets.right + 20,
-        left: mq.viewInsets.left + 20,
-        top: mq.viewInsets.top + 200,
-        bottom: mq.viewInsets.bottom + 100,
+        right: 18.h,
+        left: 18.h,
+        top: 180.h,
+        bottom: 70.h,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,10 +26,10 @@ class CustomPageViewContent extends StatelessWidget {
         children: [
           Image.asset(
             imageTitle,
-            height: mq.size.height / 2.5,
-            width: double.infinity,
+            height:391.h,
+            width: 391.w,
           ),
-          SizedBox(height: mq.size.height * 0.03),
+          SizedBox(height: 35.h),
           SizedBox(
             width: mq.size.width * 0.85,
             child: Text(
@@ -37,7 +38,7 @@ class CustomPageViewContent extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Cairo',
                 color: const Color(0xff2699FB),
-                fontSize: mq.textScaleFactor + 28,
+                fontSize: 18.sp,
               ),
             ),
           ),

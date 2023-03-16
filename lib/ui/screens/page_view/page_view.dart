@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:sw_project/ui/screens/page_view/screen_one.dart';
 import 'package:sw_project/ui/screens/page_view/screen_three.dart';
@@ -10,7 +11,6 @@ class MainPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = PageController();
-    var mq = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: const Color(0xffF1F9FF),
       body: Column(
@@ -27,9 +27,9 @@ class MainPageView extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              right: mq.viewInsets.right + 50.0,
-              left: mq.viewInsets.left + 50.0,
-              bottom: mq.viewInsets.bottom + 100.0,
+              right: 25.0.h,
+              left: 25.0.h,
+              bottom: 60.0.h,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +45,7 @@ class MainPageView extends StatelessWidget {
                   child: Text(
                     'SKIP',
                     style: TextStyle(
-                      fontSize: mq.textScaleFactor + 22,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Arial',
                     ),
@@ -57,8 +57,8 @@ class MainPageView extends StatelessWidget {
                   effect: WormEffect(
                     activeDotColor: const Color(0xff33A1FD),
                     dotColor: const Color(0xffBCE0FD),
-                    dotHeight: mq.textScaleFactor + 12,
-                    dotWidth: mq.textScaleFactor + 12,
+                    dotHeight: 8.r,
+                    dotWidth: 8.r,
                   ),
                 ),
                 TextButton(
@@ -73,7 +73,7 @@ class MainPageView extends StatelessWidget {
                   child: Text(
                     'NEXT',
                     style: TextStyle(
-                      fontSize: mq.textScaleFactor + 22,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Arial',
                     ),
