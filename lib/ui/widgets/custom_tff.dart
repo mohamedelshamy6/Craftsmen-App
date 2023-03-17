@@ -18,13 +18,20 @@ class CustomTFF extends StatefulWidget {
 }
 
 class _CustomTFFState extends State<CustomTFF> {
+  bool? check;
+
+  @override
+  void initState() {
+    check = true;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    var check = true;
     return TextFormField(
       obscureText: widget.id == 1
           ? false
-          : check == true
+          : check!
               ? true
               : false,
       textAlign: TextAlign.end,
@@ -34,11 +41,11 @@ class _CustomTFFState extends State<CustomTFF> {
             ? IconButton(
                 onPressed: () {
                   setState(() {
-                    check = !check;
+                    check = !check!;
                   });
                 },
                 icon: Icon(
-                  check == false ? Icons.visibility : Icons.visibility_off,
+                  !check! ? Icons.visibility : Icons.visibility_off,
                   color: const Color(0xff33A1FD),
                 ),
               )

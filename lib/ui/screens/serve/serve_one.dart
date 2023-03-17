@@ -1,487 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ServeOne extends StatelessWidget {
   const ServeOne({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<String> titles = [
+      "مهندس",
+      "مبرمج",
+      "طبيب",
+      "مدرس خصوصي",
+      "صيدلي",
+      "جارد",
+      "ماركت",
+      "نجار مسلح",
+      "ميكانيكي",
+      "عامل بناء",
+      "رجل توصيل",
+      "عامل نضافه",
+      "جزار",
+      "غسيل عربيات",
+      "طباخ",
+      "كهربائي",
+      "استورجي",
+      "حداد",
+      "نقاش",
+      "نجار",
+      "تمريض منزلى",
+      "حلاق",
+    ];
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xffFFFFFF),
       appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.blue,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: const Color(0xff2699FB),
+          size: 24.r,
         ),
-        title: const Text(
-          "الخدمات",
-          style: TextStyle(color: Colors.blue, fontSize: 25),
-        ),
+        backgroundColor: const Color(0xffFFFFFF),
         centerTitle: true,
+        title: Text(
+          'الخدمات',
+          style: TextStyle(
+            fontFamily: 'Cairo',
+            fontSize: 24.sp,
+            color: const Color(0xff33A1FD),
+          ),
+        ),
       ),
-      body: GridView.count(
-          crossAxisCount: 3,
-          mainAxisSpacing: 1,
-          crossAxisSpacing: 1,
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "مهندس",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 25.h,
+            right: 25.w,
+            left: 25.w,
+            bottom: 20.h,
+          ),
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 1,
+              crossAxisSpacing: 1,
+            ),
+            itemCount: titles.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(4.r),
+                    ),
+                    color: const Color(0xffF1F9FF),
+                    border: Border.all(
+                      width: 1,
+                      color: const Color(0xffBCE0FD),
                     ),
                   ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "مبرمج",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
+                  margin: EdgeInsets.all(5.w),
+                  child: Center(
+                    child: Text(
+                      titles[index],
+                      style: TextStyle(
+                        fontSize: 20.sp,
+                        color: const Color(0xff33A1FD),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "طبيب",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "مدرس خصوصي",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "صيدلي",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "تمريض منزلى",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "حلاق",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "نجار",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "نقاش",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "حداد",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "استورجي",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "محار",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "كهربائي",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "طباخ",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "غسيل عربيات",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "جزار",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "عامل نضافه",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "رجل توصيل",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "عامل بناء",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "ميكانيكي",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "نجار مسلح",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "ماركت",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "مهندس",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                color: Color.fromRGBO(188, 224, 253, 0.5),
-              ),
-              margin: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "جارد",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromRGBO(51, 244, 253, 10),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ]),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sw_project/ui/widgets/custom_tff.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -6,132 +8,100 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffFFFFFF),
+      appBar: AppBar(
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: const Color(0xff2699FB),
+          size: 24.r,
+        ),
+        backgroundColor: const Color(0xffFFFFFF),
+      ),
       body: SafeArea(
-        child: SingleChildScrollView(
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 100.h,
+            left: 25.w,
+            right: 25.w,
+            bottom: 80.h,
+          ),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.arrow_back,
-                      size: 30,
-                      color: Colors.blue,
-                    ),
-                  ],
+              Text(
+                "إنشاء حساب",
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xff33A1FD),
+                  fontFamily: 'Cairo',
                 ),
               ),
-              const SizedBox(height: 50,),
-              const Text("انشاء حساب",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-              const SizedBox(height: 20,),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextFormField(
-                  textAlign: TextAlign.end,
-                  keyboardType: TextInputType.name,
-                  decoration: InputDecoration(
-                      hintText: "الاسم",
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
+              SizedBox(height: 60.h),
+              const CustomTFF(
+                hintText: 'الاسم',
+                kbType: TextInputType.name,
+                id: 1,
+              ),
+              SizedBox(height: 15.h),
+              const CustomTFF(
+                hintText: 'البريد الالكتروني',
+                kbType: TextInputType.emailAddress,
+                id: 1,
+              ),
+              SizedBox(height: 15.h),
+              const CustomTFF(
+                hintText: 'كلمة السر',
+                kbType: TextInputType.visiblePassword,
+                id: 2,
+              ),
+              SizedBox(height: 15.h),
+              const CustomTFF(
+                hintText: 'تأكيد كلمة السر',
+                kbType: TextInputType.visiblePassword,
+                id: 2,
+              ),
+              SizedBox(height: 15.h),
+              const CustomTFF(
+                hintText: 'رقم الهاتف',
+                kbType: TextInputType.phone,
+                id: 1,
+              ),
+              SizedBox(height: 45.h),
+              SizedBox(
+                width: 215.w,
+                height: 55.h,
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "من خلال إنشاء حساب فإنك توافق على بنود الخدمة وخصوصية السياسة",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15.sp,
+                      color: const Color(0xff33A1FD),
+                      fontFamily: 'Cairo'),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextFormField(
-                  textAlign: TextAlign.end,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                      hintText: "البريد الالكتروني",
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextFormField(
-                  textAlign: TextAlign.end,
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      hintText: "كلمه السر",
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextFormField(
-                  textAlign: TextAlign.end,
-                  obscureText: true,
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                      hintText: "تاكيد كلمة السر",
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextFormField(
-                  textAlign: TextAlign.end,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      hintText: "رقم الهاتف",
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide:
-                          const BorderSide(color: Colors.blue, width: 2))),
-                ),
-              ),
-              const SizedBox(height: 20,),
-              const Text(
-                "من خلال انشاء الحساب فانك توافق على بنود الخدمه", style:TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 15,
-                  color: Colors.blue
-              ),),
-              const SizedBox(height: 20,),
-              Container(
-                height: 48,
-                padding: const EdgeInsets.only(left: 10,right: 10),
+              SizedBox(height: 80.h),
+              SizedBox(
+                height: 50.h,
                 width: double.infinity,
-                child: ElevatedButton(onPressed: (){},child: const Text("استمرار"),),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "إستمرار",
+                    style: TextStyle(
+                      fontFamily: 'cairo',
+                      fontWeight: FontWeight.w200,
+                      color: const Color(0xffFFFFFF),
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                ),
               )
             ],
           ),
-        )
-      ),
+        ),
+      )),
     );
   }
-
 }

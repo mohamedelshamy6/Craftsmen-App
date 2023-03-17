@@ -14,7 +14,9 @@ class CustomClickedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, 'signUpScreen');
+        },
         child: SizedBox(
           width: double.infinity,
           child: Column(

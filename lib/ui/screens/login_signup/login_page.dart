@@ -100,6 +100,7 @@ class LoginScreen extends StatelessWidget {
                     fontSize: 14.sp,
                     fontFamily: 'cairo',
                     color: const Color(0xff2699FB),
+                    fontWeight: FontWeight.w200,
                   ),
                 ),
                 SizedBox(height: 28.h),
@@ -109,56 +110,40 @@ class LoginScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: const DecorationImage(
-                            image: AssetImage(
-                              'assets/icon_images/fb_logo.png',
-                            ),
-                          ),
-                          border: Border.all(
-                            color: const Color(0xff2699FB),
-                          ),
+                      InkWell(
+                        child: Image.asset(
+                          'assets/icon_images/facebook.png',
+                          width: 60.w,
+                          fit: BoxFit.fitHeight,
                         ),
-                        width: 60.w,
+                        onTap: () {},
                       ),
                       SizedBox(width: 10.w),
-                      Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: const DecorationImage(
-                            image: AssetImage(
-                              'assets/icon_images/tw_logo.png',
-                            ),
-                          ),
-                          border: Border.all(
-                            color: const Color(0xff2699FB),
-                          ),
+                      InkWell(
+                        child: Image.asset(
+                          'assets/icon_images/twitter.png',
+                          width: 60.w,
+                          fit: BoxFit.fitHeight,
                         ),
-                        width: 60.w,
+                        onTap: () {},
                       ),
                       SizedBox(width: 10.w),
-                      Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: const DecorationImage(
-                            image: AssetImage(
-                              'assets/icon_images/g_logo.png',
-                            ),
-                          ),
-                          border: Border.all(
-                            color: const Color(0xff2699FB),
-                          ),
+                      InkWell(
+                        child: Image.asset(
+                          'assets/icon_images/g+.png',
+                          width: 60.w,
+                          fit: BoxFit.fitHeight,
                         ),
-                        width: 60.w,
+                        onTap: () {},
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 60.h),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'signUpScreen');
+                  },
                   child: Text(
                     "ليس لديك حساب؟",
                     style: TextStyle(

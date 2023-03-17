@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sw_project/ui/screens/favorites/favorites.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
-import 'package:sw_project/ui/screens/page_view/page_view.dart';
+import 'package:sw_project/ui/screens/login_signup/sign_up.dart';
 
 void main() {
   runApp(
@@ -24,10 +25,11 @@ class MyApp extends StatelessWidget {
           routes: {
             '/': (context) => child!,
             'loginScreen': (context) => const LoginScreen(),
+            'signUpScreen': (context) => const SignUp(),
           },
         );
       },
-      child: const MainPageView(),
+      child: const Favorites(),
     );
   }
 }
