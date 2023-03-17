@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sw_project/ui/screens/favorites/favorites.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/screens/login_signup/sign_up.dart';
+import 'package:sw_project/ui/screens/page_view/page_view.dart';
 
 void main() {
   runApp(
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           },
         );
       },
-      child: const Favorites(),
+      child: const MainPageView(),
     );
   }
 }
