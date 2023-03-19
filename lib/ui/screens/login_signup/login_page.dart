@@ -74,24 +74,26 @@ class LoginScreen extends StatelessWidget {
                   height: 48.h,
                   width: double.infinity,
                   child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0.r),
-                          ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0.r),
                         ),
                       ),
-                      child: Text(
-                        "تسجيل الدخول",
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontFamily: 'Cairo',
-                          color: const Color(0xffFFFFFF),
-                          fontWeight: FontWeight.w200,
-                        ),
+                    ),
+                    child: Text(
+                      "تسجيل الدخول",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontFamily: 'Cairo',
+                        color: const Color(0xffFFFFFF),
+                        fontWeight: FontWeight.w200,
                       ),
-                      onPressed: () {}),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'botNavBar');
+                    },
+                  ),
                 ),
                 SizedBox(height: 43.h),
                 Text(

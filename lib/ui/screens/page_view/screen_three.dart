@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/page_view_clicked_widget.dart';
+import '../../widgets/page_view/page_view_clicked_widget.dart';
 
 class ScreenThree extends StatelessWidget {
   const ScreenThree({Key? key}) : super(key: key);

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sw_project/ui/screens/body/bottom_nav_bar.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/screens/login_signup/sign_up.dart';
 import 'package:sw_project/ui/screens/page_view/page_view.dart';
+import 'package:sw_project/ui/screens/serve/serve_one.dart';
 
 void main() {
-  runApp(
-    const MyApp(),
-  );
+  Paint.enableDithering = true;
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
             '/': (context) => child!,
             'loginScreen': (context) => const LoginScreen(),
             'signUpScreen': (context) => const SignUp(),
+            'botNavBar': (context) => const BottomNavBar(),
+            'services':(context) => const ServeOne(),
           },
         );
       },

@@ -23,10 +23,11 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/icon_images/blue_icons/
     - assets/icon_images/
+    - assets/icon_images/blue_icons/
     - assets/icon_images/default_icons/
     - assets/images/page_view_images/
+    - assets/images/home_page_images/
 
   fonts:
     - family: Cairo

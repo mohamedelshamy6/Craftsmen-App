@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../widgets/page_view/page_view_content.dart';
 
-import '../../widgets/page_view_content.dart';
 
 class ScreenTwo extends StatelessWidget {
   const ScreenTwo({Key? key}) : super(key: key);

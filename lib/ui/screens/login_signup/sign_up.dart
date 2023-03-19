@@ -86,7 +86,9 @@ class SignUp extends StatelessWidget {
                 height: 50.h,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, 'loginScreen');
+                  },
                   child: Text(
                     "إستمرار",
                     style: TextStyle(
