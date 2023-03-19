@@ -20,6 +20,43 @@ class CustomLV2 extends StatelessWidget {
             ),
             child: Row(
               children: [
+                Image.asset(
+                  'assets/images/home_page_images/gps.png',
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 31.h,
+                    bottom: 53.h,
+                    left: 15.w,
+                  ),
+                  child: SizedBox(
+                    width: 180.w,
+                    child: Text(
+                      'اختر الخدمة التي تريدها وسيصل العامل المناسب إلى منزلك على الفور',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: Colors.white,
+                        fontFamily: 'Cairo',
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: 20.w),
+          Container(
+            width: 310.w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4.r),
+              color: const Color(0xff33A1FD),
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/images/home_page_images/maid.png',
+                ),
                 Padding(
                   padding: EdgeInsets.only(
                     top: 15.h,
@@ -54,43 +91,6 @@ class CustomLV2 extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
-                Image.asset(
-                  'assets/images/home_page_images/maid.png',
-                ),
-              ],
-            ),
-          ),
-          SizedBox(width: 20.w),
-          Container(
-            width: 310.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.r),
-              color: const Color(0xff33A1FD),
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 31.h,
-                    bottom: 53.h,
-                    left: 15.w,
-                  ),
-                  child: SizedBox(
-                    width: 180.w,
-                    child: Text(
-                      'اختر الخدمة التي تريدها وسيصل العامل المناسب إلى منزلك على الفور',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        color: Colors.white,
-                        fontFamily: 'Cairo',
-                      ),
-                    ),
-                  ),
-                ),
-                Image.asset(
-                  'assets/images/home_page_images/gps.png',
                 ),
               ],
             ),

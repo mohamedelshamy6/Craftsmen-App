@@ -41,11 +41,11 @@ class CustomLV1 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              imageTitle.reversed.elementAt(index),
+              imageTitle.elementAt(index),
               height: 110.h,
             ),
             Text(
-              title.reversed.elementAt(index),
+              title.elementAt(index),
               style: TextStyle(
                 fontFamily: 'cairo',
                 fontSize: 12.sp,

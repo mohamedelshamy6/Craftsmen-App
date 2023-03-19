@@ -37,9 +37,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
             topLeft: Radius.circular(50),
           ),
           child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             showSelectedLabels: false,
             showUnselectedLabels: false,
-            backgroundColor: const Color(0xffF3F3F3),
+            backgroundColor: Colors.grey[300],
             currentIndex: currentIndex,
             items: [
               BottomNavigationBarItem(
