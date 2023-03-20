@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sw_project/ui/widgets/home_page/custom_list_view_1.dart';
+
 import '../../widgets/home_page/custom_list_view_2.dart';
 import '../../widgets/home_page/custom_list_view_3.dart';
 
@@ -152,7 +153,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 25.w),
+                      padding: EdgeInsets.only(left: 15.w),
                       child: Row(
                         children: [
                           TextButton(
@@ -162,7 +163,7 @@ class HomePage extends StatelessWidget {
                             child: Text(
                               'المزيد',
                               style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 color: const Color(0xff33A1FD),
                                 fontFamily: 'Cairo',
                                 fontWeight: FontWeight.w200,
@@ -197,7 +198,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 15.h),
                     Padding(
-                      padding: EdgeInsets.only(left: 25.w),
+                      padding: EdgeInsets.only(left: 15.w),
                       child: Row(
                         children: [
                           TextButton(
@@ -205,7 +206,7 @@ class HomePage extends StatelessWidget {
                             child: Text(
                               'المزيد',
                               style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 color: const Color(0xff33A1FD),
                                 fontFamily: 'Cairo',
                                 fontWeight: FontWeight.w200,

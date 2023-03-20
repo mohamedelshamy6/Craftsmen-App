@@ -25,17 +25,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
       extendBody: true,
       body: pages[currentIndex],
       bottomNavigationBar: Container(
-        height: 50.h,
+        height: 60.h,
         decoration:  BoxDecoration(
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(50.r),
-            topLeft: Radius.circular(50.r),
+            topRight: Radius.circular(35.r),
+            topLeft: Radius.circular(35.r),
           ),
         ),
         child: ClipRRect(
           borderRadius:  BorderRadius.only(
-            topRight: Radius.circular(50.r),
-            topLeft: Radius.circular(50.r),
+            topRight: Radius.circular(35.r),
+            topLeft: Radius.circular(35.r),
           ),
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
@@ -54,8 +54,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       )
                     : Image.asset(
                         'assets/icon_images/default_icons/home.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       ),
               ),
               BottomNavigationBarItem(
@@ -63,13 +63,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 icon: currentIndex == 1
                     ? Image.asset(
                         'assets/icon_images/blue_icons/heart_b.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       )
                     : Image.asset(
                         'assets/icon_images/default_icons/heart.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       ),
               ),
               BottomNavigationBarItem(
@@ -77,13 +77,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 icon: currentIndex == 2
                     ? Image.asset(
                         'assets/icon_images/blue_icons/chatbubbles_b.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       )
                     : Image.asset(
                         'assets/icon_images/default_icons/chatbubbles.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       ),
               ),
               BottomNavigationBarItem(
@@ -91,13 +91,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 icon: currentIndex == 3
                     ? Image.asset(
                         'assets/icon_images/blue_icons/user_alt_b.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       )
                     : Image.asset(
                         'assets/icon_images/default_icons/user_alt.png',
-                        height: 25.h,
-                        width: 25.w,
+                  height: 25.h,
+                  width: 25.w,
                       ),
               ),
             ],

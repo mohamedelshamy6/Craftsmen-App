@@ -21,7 +21,7 @@ class CustomLV3 extends StatelessWidget {
       itemBuilder: (context, index) => InkWell(
         onTap: () {},
         child: SizedBox(
-          width: 150.w,
+          width: 170.w,
           child: Column(
             children: [
               Container(
@@ -72,7 +72,7 @@ class CustomLV3 extends StatelessWidget {
                         Text(
                           'Ahmed Tarek',
                           style: TextStyle(
-                            fontSize: 13.sp,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Arial',
                             color: const Color(0xff33A1FD),
@@ -81,7 +81,7 @@ class CustomLV3 extends StatelessWidget {
                         Text(
                           '350 طلب',
                           style: TextStyle(
-                            fontSize: 12.sp,
+                            fontSize: 15.sp,
                             fontFamily: 'Cairo',
                             color: const Color(0xff33A1FD),
                           ),
@@ -93,12 +93,13 @@ class CustomLV3 extends StatelessWidget {
                             (index) => Icon(
                               Icons.star,
                               color: const Color(0xffFFB703),
-                              size: 14.r,
+                              size: 17.r,
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: 60.w,
+                          width: 70.w,
+                          height: 25.h,
                           child: ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
