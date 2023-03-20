@@ -30,12 +30,12 @@ class CustomLV2 extends StatelessWidget {
                     left: 15.w,
                   ),
                   child: SizedBox(
-                    width: 180.w,
+                    width: 155.w,
                     child: Text(
                       'اختر الخدمة التي تريدها وسيصل العامل المناسب إلى منزلك على الفور',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14.sp,
+                        fontSize: 13.sp,
                         color: Colors.white,
                         fontFamily: 'Cairo',
                       ),
@@ -71,7 +71,7 @@ class CustomLV2 extends StatelessWidget {
                           'وفر اكتر مع خصومات للمستخدمين الجدد',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 13.sp,
                             color: Colors.white,
                             fontFamily: 'Cairo',
                           ),

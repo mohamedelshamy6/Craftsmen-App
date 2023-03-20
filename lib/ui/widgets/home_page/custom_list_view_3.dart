@@ -93,7 +93,7 @@ class CustomLV3 extends StatelessWidget {
                             (index) => Icon(
                               Icons.star,
                               color: const Color(0xffFFB703),
-                              size: 20.r,
+                              size: 14.r,
                             ),
                           ),
                         ),
@@ -110,7 +110,7 @@ class CustomLV3 extends StatelessWidget {
                               child: Text(
                                 'عرض',
                                 style: TextStyle(
-                                  fontSize: 14.sp,
+                                  fontSize: 13.sp,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Cairo',
                                 ),

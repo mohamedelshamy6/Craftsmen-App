@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sw_project/ui/screens/Home/home_page.dart';
 import 'package:sw_project/ui/screens/body/bottom_nav_bar.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/screens/login_signup/sign_up.dart';
+import 'package:sw_project/ui/screens/login_signup/worker_profile_edit.dart';
 import 'package:sw_project/ui/screens/page_view/page_view.dart';
+import 'package:sw_project/ui/screens/requests/delete_profile.dart';
 import 'package:sw_project/ui/screens/serve/serve_one.dart';
+import 'package:sw_project/ui/screens/userprofile/UserProfile.dart';
 
 void main() {
   Paint.enableDithering = true;
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           routes: {
-            '/': (context) => child!,
+            '/': (context) =>child!,
             'loginScreen': (context) => const LoginScreen(),
             'signUpScreen': (context) => const SignUp(),
             'botNavBar': (context) => const BottomNavBar(),
