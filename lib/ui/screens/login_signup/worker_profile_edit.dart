@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sw_project/ui/screens/requests/delete_profile.dart';
 
 class WorkerProfileEdit extends StatelessWidget {
   const WorkerProfileEdit({super.key});
@@ -159,7 +160,9 @@ class WorkerProfileEdit extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DeleteScreen(),));
+                },
                 child: const Text(
                   "حذف الحساب",
                   style: TextStyle(fontSize: 25),
