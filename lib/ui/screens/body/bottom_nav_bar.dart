@@ -26,16 +26,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: pages[currentIndex],
       bottomNavigationBar: Container(
         height: 50.h,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(50),
-            topLeft: Radius.circular(50),
+            topRight: Radius.circular(50.r),
+            topLeft: Radius.circular(50.r),
           ),
         ),
         child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(50),
-            topLeft: Radius.circular(50),
+          borderRadius:  BorderRadius.only(
+            topRight: Radius.circular(50.r),
+            topLeft: Radius.circular(50.r),
           ),
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,

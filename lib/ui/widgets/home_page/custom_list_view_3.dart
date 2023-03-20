@@ -46,7 +46,7 @@ class CustomLV3 extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 180.h,
+                height: 220.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(5.r),
@@ -56,15 +56,15 @@ class CustomLV3 extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: 5.h,
-                    bottom: 5.h,
+                    top: 10.h,
+                    bottom: 10.h,
                   ),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CircleAvatar(
-                          radius: 35.r,
+                          radius: 40.r,
                           backgroundImage: AssetImage(
                             imageTitle[index],
                           ),
