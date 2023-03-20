@@ -11,7 +11,7 @@ class DeleteScreen extends StatelessWidget {
         appBar: AppBar(
           leading:  IconButton(onPressed: (){
             Navigator.pop(context);
-          }, icon: const Icon(Icons.arrow_back,color: Colors.blue,),),
+          }, icon: const Icon(Icons.arrow_back,color: Color(0xff33A1FD),),),
           elevation: 0.0,
           backgroundColor: Colors.white,
         ),

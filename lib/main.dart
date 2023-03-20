@@ -8,7 +8,7 @@ import 'package:sw_project/ui/screens/login_signup/worker_profile_edit.dart';
 import 'package:sw_project/ui/screens/page_view/page_view.dart';
 import 'package:sw_project/ui/screens/requests/delete_profile.dart';
 import 'package:sw_project/ui/screens/serve/serve_one.dart';
-import 'package:sw_project/ui/screens/userprofile/UserProfile.dart';
+import 'package:sw_project/ui/screens/userprofile/user_profile.dart';
 
 void main() {
   Paint.enableDithering = true;
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           routes: {
-            '/': (context) =>child!,
+            '/': (context) =>UserProfile(),
             'loginScreen': (context) => const LoginScreen(),
             'signUpScreen': (context) => const SignUp(),
             'botNavBar': (context) => const BottomNavBar(),

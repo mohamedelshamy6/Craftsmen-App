@@ -224,7 +224,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),SizedBox(height: 5.h),
+                    ),SizedBox(height: 15.h),
                     Directionality(
                       textDirection: TextDirection.rtl,
                       child: SizedBox(
