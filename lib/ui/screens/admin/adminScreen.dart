@@ -89,8 +89,8 @@ class AdminScreen extends StatelessWidget {
                 width: 380.w,
                 height: 184.h,
                 color: const Color(0xffF1F9FF),
-                child: const varprofile(
-                    Textone: 'الطلبات ', Texttwo: 'اخرين16+'),
+                child: const VarProfile(
+                    textOne: 'الطلبات',textTwo: 'اخرين16+'),
               ),
               Positioned(top: 70.h, right: 20.w, child: const UserP()),
               Positioned(left: 20.w, top: 70.h, child: const UserP()),
@@ -103,8 +103,8 @@ class AdminScreen extends StatelessWidget {
                 width: 380.w,
                 height: 184.h,
                 color: const Color(0xffF1F9FF),
-                child: const varprofile(
-                    Textone: 'الاعمال المنجزه ', Texttwo: 'اخرين138+'),
+                child: const VarProfile(
+                    textOne: 'الاعمال المنجزه ', textTwo: 'اخرين138+',),
               ),
               Positioned(top: 70.h, right: 20.w, child: const UserP()),
               Positioned(left: 20.w, top: 70.h, child: const UserP()),
