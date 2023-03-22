@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sw_project/ui/screens/Home/home_page.dart';
+import 'package:sw_project/ui/screens/admin/adminScreen.dart';
 import 'package:sw_project/ui/screens/body/bottom_nav_bar.dart';
+import 'package:sw_project/ui/screens/favorites/favorites.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/screens/login_signup/sign_up.dart';
 import 'package:sw_project/ui/screens/login_signup/worker_profile_edit.dart';
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           routes: {
-            '/': (context) =>UserProfile(),
+            '/': (context) =>child!,
             'loginScreen': (context) => const LoginScreen(),
             'signUpScreen': (context) => const SignUp(),
             'botNavBar': (context) => const BottomNavBar(),

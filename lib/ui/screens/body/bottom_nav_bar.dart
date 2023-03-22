@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Home/home_page.dart';
 import '../favorites/favorites.dart';
+import '../userprofile/user_profile.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const HomePage(),
     const Favorites(),
     const Scaffold(),
-    const Scaffold()
+    const UserProfile()
   ];
 
   @override
