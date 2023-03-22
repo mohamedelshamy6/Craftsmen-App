@@ -15,6 +15,7 @@ class ScreenThree extends StatelessWidget {
           CustomClickedWidget(
             title: 'مستخدم',
             imageTitle: 'assets/images/page_view_images/Hero_f.png',
+            location: 'userSignUp',
           ),
           Divider(
             color: Color(0xff33A1FD),
@@ -23,6 +24,7 @@ thickness: 2,
           CustomClickedWidget(
             title: 'عامل',
             imageTitle: 'assets/images/page_view_images/Hero_m.png',
+            location: 'workerSignUp',
           ),
         ],
       ),

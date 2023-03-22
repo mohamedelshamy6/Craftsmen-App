@@ -26,7 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       extendBody: true,
       body: pages[currentIndex],
       bottomNavigationBar: Container(
-        height: 60.h,
+        height: 65.h,
         decoration:  BoxDecoration(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(35.r),

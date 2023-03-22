@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sw_project/ui/widgets/custom_tff.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class WorkerSignUp extends StatelessWidget {
+  const WorkerSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SignUp extends StatelessWidget {
             top: 100.h,
             left: 25.w,
             right: 25.w,
-            bottom: 80.h,
+            bottom: 65.h,
           ),
           child: Column(
             children: [
@@ -60,6 +60,12 @@ class SignUp extends StatelessWidget {
                 hintText: 'تأكيد كلمة السر',
                 kbType: TextInputType.visiblePassword,
                 id: 2,
+              ),
+              SizedBox(height: 15.h),
+              const CustomTFF(
+                hintText: 'المهنة',
+                kbType: TextInputType.text,
+                id: 1,
               ),
               SizedBox(height: 15.h),
               const CustomTFF(

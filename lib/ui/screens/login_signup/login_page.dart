@@ -144,7 +144,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: 60.h),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, 'signUpScreen');
+                    Navigator.pushNamed(context, 'userSignUp');
                   },
                   child: Text(
                     "ليس لديك حساب؟",

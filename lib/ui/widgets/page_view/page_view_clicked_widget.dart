@@ -6,16 +6,17 @@ class CustomClickedWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.imageTitle,
+    required this.location,
   });
 
-  final String title, imageTitle;
+  final String title, imageTitle, location;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, 'signUpScreen');
+          Navigator.pushNamed(context, location);
         },
         child: SizedBox(
           width: double.infinity,

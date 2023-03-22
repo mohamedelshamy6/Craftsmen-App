@@ -186,7 +186,7 @@ class HomePage extends StatelessWidget {
                     Directionality(
                       textDirection: TextDirection.rtl,
                       child: SizedBox(
-                        height: 135.h,
+                        height: 140.h,
                         width: double.infinity,
                         child: const CustomLV1(),
                       ),
