@@ -30,39 +30,52 @@ class UserProfile extends StatelessWidget {
         children: [
           Center(
             child: CircleAvatar(
-                radius: 50.r,
-                backgroundImage: const AssetImage('assets/images/profile.png')),
+              radius: 50.r,
+              backgroundImage: const AssetImage(
+                'assets/images/profile.png',
+              ),
+            ),
           ),
           Text(
             'Abdo Fahmy',
             style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Cairo',
-                color: const Color(0xff2699FB)),
+              fontSize: 20.sp,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Cairo',
+              color: const Color(0xff2699FB),
+            ),
           ),
           Text(
             'طنطا',
             style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Cairo',
-                color: const Color(0xff2699FB)),
+              fontSize: 20.sp,
+              fontWeight: FontWeight.normal,
+              fontFamily: 'Cairo',
+              color: const Color(0xff2699FB),
+            ),
           ),
-          SizedBox(
-            height: 30.h,
-          ),
+          SizedBox(height: 30.h),
           Stack(
             children: [
               Container(
                 width: 380.w,
                 height: 184.h,
                 color: Colors.white,
-                child: const varprofile(
-                    Textone: 'الطلبات المرسله', Texttwo: 'اخرين+16'),
+                child: const VarProfile(
+                  textOne: 'الطلبات المرسله',
+                  textTwo: 'اخرين+16',
+                ),
               ),
-              Positioned(top: 70.h, right: 20.w, child: const UserP()),
-              Positioned(left: 20.w, top: 70.h, child: const UserP()),
+              Positioned(
+                top: 70.h,
+                right: 20.w,
+                child: const UserP(),
+              ),
+              Positioned(
+                left: 20.w,
+                top: 70.h,
+                child: const UserP(),
+              ),
             ],
           ),
           const SizedBox(height: 20),
@@ -72,32 +85,44 @@ class UserProfile extends StatelessWidget {
                 width: 380.w,
                 height: 184.h,
                 color: const Color(0xffBCE0FD),
-                child: const varprofile(
-                    Textone: 'الطلبات التي تم رفض التعامل معها', Texttwo: 'اخرين+11'),
+                child: const VarProfile(
+                  textOne: 'الطلبات التي تم رفض التعامل معها',
+                  textTwo: 'اخرين+11',
+                ),
               ),
-              Positioned(top: 70.h, right: 20.w, child: const UserP()),
-              Positioned(left: 20.w, top: 70.h, child: const UserP()),
+              Positioned(
+                top: 70.h,
+                right: 20.w,
+                child: const UserP(),
+              ),
+              Positioned(
+                left: 20.w,
+                top: 70.h,
+                child: const UserP(),
+              ),
             ],
           ),
+          SizedBox(height: 70.h),
           SizedBox(
-            height: 70.h,
+            width: 380.w,
+            height: 47.h,
+            child: ElevatedButton(
+              style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(
+                  Color(0xff33A1FD),
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                'التقديم كامل في التطبيق',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Cairo',
+                  fontSize: 15.sp,
+                ),
+              ),
+            ),
           ),
-          SizedBox(
-              width: 380.w,
-              height: 47.h,
-              child: ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Color(0xff33A1FD))),
-                  onPressed: () {},
-                  child:  Text(
-                    'التقديم كامل في التطبيق',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Cairo',
-                      fontSize: 15.sp
-                    ),
-                  )))
         ],
       ),
     );
