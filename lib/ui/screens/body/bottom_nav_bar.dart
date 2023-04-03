@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sw_project/ui/screens/chats/chats.dart';
 import '../Home/home_page.dart';
 import '../favorites/favorites.dart';
 import '../userprofile/user_profile.dart';
@@ -16,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List pages = [
     const HomePage(),
     const Favorites(),
-    const Scaffold(),
+    const Chats(),
     const UserProfile()
   ];
 

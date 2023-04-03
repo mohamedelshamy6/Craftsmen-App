@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sw_project/ui/screens/body/bottom_nav_bar.dart';
+import 'package:sw_project/ui/screens/chats/single_chat.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/screens/login_signup/user_sign_up.dart';
 import 'package:sw_project/ui/screens/login_signup/worker_sign_up.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
             'workerSignUp': (context) => const WorkerSignUp(),
             'botNavBar': (context) => const BottomNavBar(),
             'services': (context) => const ServeOne(),
+            'singleChat': (context) => const SingleChat(),
           },
         );
       },

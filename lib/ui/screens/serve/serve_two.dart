@@ -36,10 +36,10 @@ class ServeTwo extends StatelessWidget {
             ),
             itemCount: 16,
             itemBuilder: (BuildContext context, int index) {
-              return Card(
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(
-                    color: Color(0xffBCE0FD),
+              return Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: const Color(0xffBCE0FD),
                     width: 1,
                   ),
                   borderRadius: BorderRadius.all(
@@ -76,6 +76,7 @@ class ServeTwo extends StatelessWidget {
                       ],
                     ),
                     Container(
+                      height: 100.h,
                       decoration: const BoxDecoration(
                         border: Border(
                           top: BorderSide(
@@ -90,33 +91,39 @@ class ServeTwo extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(
-                              "احمد طارق",
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.bold,
-                                color: const Color(0xff33A1FD),
-                                fontFamily: 'Cairo',
+                            Expanded(
+                              child: Text(
+                                "احمد طارق",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color(0xff33A1FD),
+                                  fontFamily: 'Cairo',
+                                ),
                               ),
                             ),
                             SizedBox(height: 5.h),
-                            Text(
-                              "مدرس الفيزياء للثانوية العامة",
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w400,
-                                color: const Color(0xff33A1FD),
-                                fontFamily: 'Cairo',
+                            Expanded(
+                              child: Text(
+                                "مدرس الفيزياء للثانوية العامة",
+                                style: TextStyle(
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: const Color(0xff33A1FD),
+                                  fontFamily: 'Cairo',
+                                ),
                               ),
                             ),
                             SizedBox(height: 5.h),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: List.generate(
-                                5,
-                                (index) => const Icon(
-                                  Icons.star,
-                                  color: Color(0xffFFB703),
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: List.generate(
+                                  5,
+                                  (index) => const Icon(
+                                    Icons.star,
+                                    color: Color(0xffFFB703),
+                                  ),
                                 ),
                               ),
                             ),
