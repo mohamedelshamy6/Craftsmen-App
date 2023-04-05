@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sw_project/ui/widgets/custom_tff.dart';
+import 'package:sw_project/ui/widgets/tff/custom_tff.dart';
+
+import 'login_page.dart';
 
 class WorkerSignUp extends StatelessWidget {
   const WorkerSignUp({super.key});
@@ -93,7 +95,12 @@ class WorkerSignUp extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, 'loginScreen');
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(id: 2),
+                      ),
+                    );
                   },
                   child: Text(
                     "إستمرار",

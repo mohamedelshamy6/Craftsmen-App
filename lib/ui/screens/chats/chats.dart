@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sw_project/ui/widgets/tff/search_tff.dart';
 
 class Chats extends StatelessWidget {
   const Chats({Key? key}) : super(key: key);
@@ -30,59 +31,7 @@ class Chats extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 25.w),
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 8.r,
-                      color: Colors.grey[300]!,
-                      offset: Offset(0.0, 7.h),
-                    ),
-                  ],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: TextFormField(
-                  textAlign: TextAlign.end,
-                  keyboardType: TextInputType.name,
-                  decoration: InputDecoration(
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 18.h),
-                    prefixIcon: Padding(
-                      padding: EdgeInsets.only(left: 20.w),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.search,
-                          size: 23.r,
-                          color: const Color(0xffF79824),
-                        ),
-                      ),
-                    ),
-                    hintText: "ابحث بالاسم",
-                    hintStyle: TextStyle(
-                      color: const Color(0xff959595),
-                      fontSize: 14.sp,
-                      fontFamily: 'Cairo',
-                      fontWeight: FontWeight.w600,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: const BorderSide(
-                        color: Colors.white,
-                        width: 1,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: const BorderSide(
-                        color: Colors.white,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              const SearchTFF(hintText: "ابحث بالاسم"),
               SizedBox(height: 35.h),
               SingleChildScrollView(
                 child: SizedBox(

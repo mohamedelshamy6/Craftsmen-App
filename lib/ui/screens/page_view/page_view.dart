@@ -36,6 +36,9 @@ class MainPageView extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
+                    if (controller.page == 2) {
+                      Navigator.pushNamed(context, 'userSignUp');
+                    }
                     controller.animateToPage(
                       2,
                       duration: const Duration(milliseconds: 750),
@@ -64,7 +67,7 @@ class MainPageView extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     if (controller.page == 2) {
-                      Navigator.pushNamed(context, 'loginScreen');
+                      Navigator.pushNamed(context, 'userSignUp');
                     }
                     controller.nextPage(
                         duration: const Duration(milliseconds: 500),

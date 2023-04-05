@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/custom_tff.dart';
+import '../../widgets/tff/custom_tff.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({super.key, required this.id});
+
+  final int id;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +93,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'botNavBar');
+                      id == 1
+                          ? Navigator.pushNamed(context, 'botNavBar')
+                          : Navigator.pushNamed(context, 'admin');
                     },
                   ),
                 ),

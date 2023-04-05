@@ -19,7 +19,7 @@ class ScreenThree extends StatelessWidget {
           ),
           Divider(
             color: Color(0xff33A1FD),
-thickness: 2,
+            thickness: 2,
           ),
           CustomClickedWidget(
             title: 'عامل',

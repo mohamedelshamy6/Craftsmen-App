@@ -13,16 +13,17 @@ class AdminScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Color(0xff33A1FD),
-        ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 15),
-            child: Icon(
-              Icons.settings,
-              color: Color(0xff33A1FD),
+            padding: const EdgeInsets.only(right: 15),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'workerProfileEdit');
+              },
+              icon: const Icon(
+                Icons.settings,
+                color: Color(0xff33A1FD),
+              ),
             ),
           ),
         ],
@@ -67,7 +68,9 @@ class AdminScreen extends StatelessWidget {
                   color: const Color(0xff2699FB)),
             ),
           ),
-          SizedBox(height: 40.h,),
+          SizedBox(
+            height: 40.h,
+          ),
           SizedBox(
             width: 316.w,
             height: 42.h,
@@ -82,21 +85,25 @@ class AdminScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 40.h,),
+          SizedBox(
+            height: 40.h,
+          ),
           Stack(
             children: [
               Container(
                 width: 380.w,
                 height: 184.h,
                 color: const Color(0xffF1F9FF),
-                child: const VarProfile(
-                    textOne: 'الطلبات',textTwo: 'اخرين16+'),
+                child:
+                    const VarProfile(textOne: 'الطلبات', textTwo: 'اخرين16+'),
               ),
               Positioned(top: 70.h, right: 20.w, child: const UserP()),
               Positioned(left: 20.w, top: 70.h, child: const UserP()),
             ],
           ),
-          SizedBox(height: 20.h,),
+          SizedBox(
+            height: 20.h,
+          ),
           Stack(
             children: [
               Container(
@@ -104,7 +111,9 @@ class AdminScreen extends StatelessWidget {
                 height: 184.h,
                 color: const Color(0xffF1F9FF),
                 child: const VarProfile(
-                    textOne: 'الاعمال المنجزه ', textTwo: 'اخرين138+',),
+                  textOne: 'الاعمال المنجزه ',
+                  textTwo: 'اخرين138+',
+                ),
               ),
               Positioned(top: 70.h, right: 20.w, child: const UserP()),
               Positioned(left: 20.w, top: 70.h, child: const UserP()),

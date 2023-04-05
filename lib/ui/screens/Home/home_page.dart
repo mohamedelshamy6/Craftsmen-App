@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sw_project/ui/widgets/home_page/custom_list_view_1.dart';
+import 'package:sw_project/ui/widgets/tff/search_tff.dart';
 
 import '../../widgets/home_page/custom_list_view_2.dart';
 import '../../widgets/home_page/custom_list_view_3.dart';
@@ -88,68 +89,15 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Align(
+                    const Align(
                       alignment: AlignmentDirectional.bottomCenter,
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20.w),
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 6.r,
-                              color: Colors.grey[300]!,
-                              offset: Offset(0.0, 7.h),
-                            ),
-                          ],
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: TextFormField(
-                          textAlign: TextAlign.end,
-                          keyboardType: TextInputType.name,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 10.w, vertical: 18.h),
-                            prefixIcon: Padding(
-                              padding: EdgeInsets.only(left: 20.w),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.search,
-                                  size: 23.r,
-                                  color: const Color(0xff33A1FD),
-                                ),
-                              ),
-                            ),
-                            hintText: "ابحث عن الخدمة التي تحتاجها",
-                            hintStyle: TextStyle(
-                              color: const Color(0xff33A1FD),
-                              fontSize: 12.sp,
-                              fontFamily: 'Cairo',
-                              fontWeight: FontWeight.w600,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.r),
-                              borderSide: const BorderSide(
-                                color: Colors.white,
-                                width: 1,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.r),
-                              borderSide: const BorderSide(
-                                color: Colors.white,
-                                width: 2,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      child: SearchTFF(hintText: "ابحث عن الخدمة التي تحتاجها"),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20.h, right: 20.w,bottom: 5.h),
+                padding: EdgeInsets.only(top: 20.h, right: 20.w, bottom: 5.h),
                 child: Column(
                   children: [
                     Padding(
@@ -224,7 +172,8 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),SizedBox(height: 15.h),
+                    ),
+                    SizedBox(height: 15.h),
                     Directionality(
                       textDirection: TextDirection.rtl,
                       child: SizedBox(

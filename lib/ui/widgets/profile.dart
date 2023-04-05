@@ -42,14 +42,19 @@ class VarProfile extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Row(
           children: [
-            Text(
-              textTwo,
-              textDirection: TextDirection.rtl,
-              style: TextStyle(
-                fontSize: 14.sp,
-                color: const Color(0xff2699FB),
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Cairo',
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'requests');
+              },
+              child: Text(
+                textTwo,
+                textDirection: TextDirection.rtl,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  color: const Color(0xff2699FB),
+                  fontWeight: FontWeight.normal,
+                  fontFamily: 'Cairo',
+                ),
               ),
             ),
             const Spacer(),
