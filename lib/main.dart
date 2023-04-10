@@ -10,6 +10,7 @@ import 'package:sw_project/ui/screens/page_view/page_view.dart';
 import 'package:sw_project/ui/screens/requests/requests.dart';
 import 'package:sw_project/ui/screens/requests/veiw_request.dart';
 import 'package:sw_project/ui/screens/serve/serve_one.dart';
+import 'package:sw_project/ui/screens/worker/Worker.dart';
 
 void main() {
   Paint.enableDithering = true;
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
           },
         );
       },
-      child: const MainPageView(),
+      child: const Worker(),
     );
   }
 }
