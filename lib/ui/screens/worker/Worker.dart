@@ -160,7 +160,7 @@ class Worker extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    padding: EdgeInsets.only(right: 35.w,bottom: 20.h),
+                    padding: EdgeInsets.only(right: 50.w,bottom: 20.h),
                     alignment: Alignment.topRight,
                     child: Text(
                       'الاعمال المنجزه',
