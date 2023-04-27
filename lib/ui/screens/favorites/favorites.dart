@@ -52,7 +52,7 @@ class Favorites extends StatelessWidget {
                       alignment: AlignmentDirectional.topEnd,
                       children: [
                         Container(
-                          height: 125.h,
+                          height: 100.h,
                           width: double.infinity,
                           color: const Color(0xffF1F9FF),
                           child: ClipRRect(
@@ -76,7 +76,7 @@ class Favorites extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      height: 100.h,
+                      height: 80.h,
                       decoration: const BoxDecoration(
                         border: Border(
                           top: BorderSide(
@@ -120,9 +120,10 @@ class Favorites extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: List.generate(
                                   5,
-                                  (index) => const Icon(
+                                  (index) =>  Icon(
                                     Icons.star,
-                                    color: Color(0xffFFB703),
+                                    size: 20.r,
+                                    color: const Color(0xffFFB703),
                                   ),
                                 ),
                               ),

@@ -89,9 +89,12 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Align(
+                     Align(
                       alignment: AlignmentDirectional.bottomCenter,
-                      child: SearchTFF(hintText: "ابحث عن الخدمة التي تحتاجها"),
+                      child: Padding(
+                        padding: EdgeInsets.all(15.r),
+                        child: const SearchTFF(hintText: "ابحث عن الخدمة التي تحتاجها"),
+                      ),
                     ),
                   ],
                 ),

@@ -35,7 +35,7 @@ class Chats extends StatelessWidget {
               SizedBox(height: 35.h),
               SingleChildScrollView(
                 child: SizedBox(
-                  height: 650.h,
+                  height: 635.h,
                   child: ListView.separated(
                     separatorBuilder: (context, index) =>
                         SizedBox(height: 30.h),

@@ -16,12 +16,17 @@ class UserProfile extends StatelessWidget {
           Icons.arrow_back,
           color: Color(0xff33A1FD),
         ),
-        actions: const [
+        actions:  [
           Padding(
-            padding: EdgeInsets.only(right: 15),
-            child: Icon(
-              Icons.settings,
-              color: Color(0xff33A1FD),
+            padding: const EdgeInsets.only(right: 15),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'workerProfileEdit');
+              },
+              icon: const Icon(
+                Icons.settings,
+                color: Color(0xff33A1FD),
+              ),
             ),
           ),
         ],
@@ -112,7 +117,9 @@ class UserProfile extends StatelessWidget {
                   Color(0xff33A1FD),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+
+              },
               child: Text(
                 'التقديم كامل في التطبيق',
                 style: TextStyle(
