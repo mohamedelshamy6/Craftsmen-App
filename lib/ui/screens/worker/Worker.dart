@@ -9,12 +9,6 @@ class Worker extends StatelessWidget {
     return Scaffold(
         backgroundColor: const Color(0xffFFFFFF),
         appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Color(0xff2699FB),
-              )),
           title: const Text(
             'احمد طارق',
             style: TextStyle(
@@ -22,6 +16,10 @@ class Worker extends StatelessWidget {
                 fontFamily: 'Cairo',
                 fontSize: 24,
                 fontWeight: FontWeight.normal),
+          ),
+          iconTheme: IconThemeData(
+            color: const Color(0xff2699FB),
+            size: 24.r,
           ),
           centerTitle: true,
           actions: [
@@ -151,27 +149,36 @@ class Worker extends StatelessWidget {
                       child: Text(
                         'ارسال الطلب',
                         style: TextStyle(
-                          fontFamily: 'cairo',
-                          fontSize: 16.sp,
-                          color: const Color(0xffFFFFFF)
-                        ),
+                            fontFamily: 'cairo',
+                            fontSize: 16.sp,
+                            color: const Color(0xffFFFFFF)),
                       ),
                     ),
                   ),
                 ),
                 Container(
-                    padding: EdgeInsets.only(right: 50.w,bottom: 20.h),
+                    padding: EdgeInsets.only(right: 50.w, bottom: 20.h),
                     alignment: Alignment.topRight,
                     child: Text(
                       'الاعمال المنجزه',
-                      style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold, fontFamily: 'cairo',color: const Color(0xff2699FB)),
+                      style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'cairo',
+                          color: const Color(0xff2699FB)),
                     )),
                 Image.asset('assets/icon_images/Group 111.png'),
-                SizedBox(height: 5.h,),
+                SizedBox(
+                  height: 5.h,
+                ),
                 Image.asset('assets/icon_images/Group 111.png'),
-                SizedBox(height: 5.h,),
+                SizedBox(
+                  height: 5.h,
+                ),
                 Image.asset('assets/icon_images/Group 111.png'),
-                SizedBox(height: 5.h,),
+                SizedBox(
+                  height: 5.h,
+                ),
                 Image.asset('assets/icon_images/Group 111.png'),
               ],
             ),

@@ -8,9 +8,10 @@ import 'package:sw_project/ui/screens/login_signup/worker_profile_edit.dart';
 import 'package:sw_project/ui/screens/login_signup/worker_sign_up.dart';
 import 'package:sw_project/ui/screens/page_view/page_view.dart';
 import 'package:sw_project/ui/screens/requests/requests.dart';
-import 'package:sw_project/ui/screens/requests/veiw_request.dart';
+import 'package:sw_project/ui/screens/requests/view_request.dart';
 import 'package:sw_project/ui/screens/serve/serve_one.dart';
 import 'package:sw_project/ui/screens/worker/Worker.dart';
+
 
 void main() {
   Paint.enableDithering = true;
@@ -40,10 +41,11 @@ class MyApp extends StatelessWidget {
             'requests': (context) => const Requests(),
             'workerProfileEdit':(context) => const WorkerProfileEdit(),
             'viewRequest':(context) => const ViewRequest(),
+            'viewWorker':(context) => const Worker(),
           },
         );
       },
-      child: const Worker(),
+      child: const MainPageView(),
     );
   }
 }

@@ -106,7 +106,9 @@ class CustomLV3 extends StatelessWidget {
                                 const Color(0xff33A1FD),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'viewWorker');
+                            },
                             child: Center(
                               child: Text(
                                 'عرض',
