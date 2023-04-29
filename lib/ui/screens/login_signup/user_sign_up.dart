@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:sw_project/common/constants.dart';
+import 'package:sw_project/repositories/users/user_login.dart';
 import 'package:sw_project/ui/screens/login_signup/login_page.dart';
 import 'package:sw_project/ui/widgets/tff/custom_tff.dart';
+
+import '../../../models/users/users_register_model.dart';
+import '../../../view_models/users/user_login_view_model.dart';
+import '../../../view_models/users/user_register_view_model.dart';
 
 class UserSignUp extends StatelessWidget {
   const UserSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final userRegisterViewModel = Provider.of<UserRegisterViewModel>(context);
+    TextEditingController nameController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController phoneController = TextEditingController();
+    TextEditingController addressController = TextEditingController();
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
       appBar: AppBar(
@@ -39,34 +52,39 @@ class UserSignUp extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 60.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'الاسم',
                 kbType: TextInputType.name,
                 id: 1,
+                controller: nameController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'البريد الالكتروني',
                 kbType: TextInputType.emailAddress,
                 id: 1,
+                controller: emailController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'كلمة السر',
                 kbType: TextInputType.visiblePassword,
                 id: 2,
+                controller: passwordController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
-                hintText: 'تأكيد كلمة السر',
-                kbType: TextInputType.visiblePassword,
-                id: 2,
+              CustomTFF(
+                hintText: 'العنوان',
+                kbType: TextInputType.text,
+                id: 1,
+                controller: addressController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'رقم الهاتف',
                 kbType: TextInputType.phone,
                 id: 1,
+                controller: phoneController,
               ),
               SizedBox(height: 45.h),
               SizedBox(
@@ -87,13 +105,34 @@ class UserSignUp extends StatelessWidget {
                 height: 50.h,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(id: 1),
-                      ),
+                  onPressed: () async {
+                    final usersModel = UsersRegisterModel(
+                      name: nameController.text,
+                      email: emailController.text,
+                      password: passwordController.text,
+                      address: addressController.text,
+                      role: 'u',
+                      phone: phoneController.text,
+                      notificationToken: 'abc123',
                     );
+                    await userRegisterViewModel
+                        .registerUser(usersModel)
+                        .then((value) => Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ChangeNotifierProvider<UserLoginViewModel>(
+                                  create: (_) => UserLoginViewModel(
+                                    userLoginRepository: UserLoginRepository(),
+                                  ),
+                                  child: const LoginScreen(id: 1),
+                                ),
+                              ),
+                            ));
+                    if (userRegisterViewModel.registerErrorMessage != null) {
+                      showCustomSnackBar(
+                          userRegisterViewModel.registerErrorMessage!, context);
+                    }
                   },
                   child: Text(
                     "إستمرار",

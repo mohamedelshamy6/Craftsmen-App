@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:sw_project/view_models/users/user_login_view_model.dart';
+import '../../../common/constants.dart';
+import '../../../models/users/users_login_model.dart';
 import '../../widgets/tff/custom_tff.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,6 +13,9 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userLoginViewModel = Provider.of<UserLoginViewModel>(context);
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
       appBar: AppBar(
@@ -42,16 +49,18 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 60.h),
-                const CustomTFF(
+                CustomTFF(
                   hintText: 'البريد الالكتروني',
                   kbType: TextInputType.emailAddress,
                   id: 1,
+                  controller: emailController,
                 ),
                 SizedBox(height: 16.h),
-                const CustomTFF(
+                CustomTFF(
                   hintText: 'كلمة المرور',
                   kbType: TextInputType.visiblePassword,
                   id: 2,
+                  controller: passwordController,
                 ),
                 SizedBox(height: 10.h),
                 Row(
@@ -92,10 +101,21 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.w200,
                       ),
                     ),
-                    onPressed: () {
-                      id == 1
-                          ? Navigator.pushNamed(context, 'botNavBar')
-                          : Navigator.pushNamed(context, 'admin');
+                    onPressed: () async {
+                      UserLoginModel userLoginModel = UserLoginModel(
+                        email: emailController.text,
+                        password: passwordController.text,
+                      );
+                      await userLoginViewModel.login(userLoginModel).then(
+                            (value) => id == 1
+                                ? Navigator.pushNamed(context, 'botNavBar')
+                                : Navigator.pushNamed(context, 'admin'),
+                          );
+
+                      if (userLoginViewModel.loginErrorMessage != null) {
+                        showCustomSnackBar(
+                            userLoginViewModel.loginErrorMessage!, context);
+                      }
                     },
                   ),
                 ),

@@ -7,11 +7,13 @@ class CustomTFF extends StatefulWidget {
     required this.hintText,
     required this.kbType,
     required this.id,
+    required this.controller,
   });
 
   final String hintText;
   final TextInputType kbType;
   final int id;
+  final TextEditingController controller;
 
   @override
   State<CustomTFF> createState() => _CustomTFFState();
@@ -36,6 +38,7 @@ class _CustomTFFState extends State<CustomTFF> {
               : false,
       textAlign: TextAlign.end,
       keyboardType: widget.kbType,
+      controller: widget.controller,
       decoration: InputDecoration(
         prefixIcon: widget.id == 2
             ? IconButton(

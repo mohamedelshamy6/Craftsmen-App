@@ -9,6 +9,12 @@ class WorkerSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nameController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController phoneController = TextEditingController();
+    TextEditingController addressController = TextEditingController();
+    TextEditingController jobController = TextEditingController();
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
       appBar: AppBar(
@@ -40,40 +46,46 @@ class WorkerSignUp extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 60.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'الاسم',
                 kbType: TextInputType.name,
                 id: 1,
+                controller: nameController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'البريد الالكتروني',
                 kbType: TextInputType.emailAddress,
                 id: 1,
+                controller: emailController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'كلمة السر',
                 kbType: TextInputType.visiblePassword,
                 id: 2,
+                controller: passwordController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
-                hintText: 'تأكيد كلمة السر',
-                kbType: TextInputType.visiblePassword,
-                id: 2,
+              CustomTFF(
+                hintText: 'العنوان',
+                kbType: TextInputType.text,
+                id: 1,
+                controller: addressController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'المهنة',
                 kbType: TextInputType.text,
                 id: 1,
+                controller: jobController,
               ),
               SizedBox(height: 15.h),
-              const CustomTFF(
+              CustomTFF(
                 hintText: 'رقم الهاتف',
                 kbType: TextInputType.phone,
                 id: 1,
+                controller: phoneController,
               ),
               SizedBox(height: 45.h),
               SizedBox(
