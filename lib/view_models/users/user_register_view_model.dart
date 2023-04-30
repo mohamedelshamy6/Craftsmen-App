@@ -3,17 +3,17 @@ import 'package:sw_project/models/users/users_register_model.dart';
 import 'package:sw_project/repositories/users/user_register.dart';
 
 class UserRegisterViewModel extends ChangeNotifier {
-  final UserRegisterRepository _userRepository;
+  final UserRegisterRepository _userRegisterRepository;
 
   UserRegisterViewModel({required UserRegisterRepository userRegisterRepository})
-      : _userRepository = userRegisterRepository;
+      : _userRegisterRepository = userRegisterRepository;
 
   String? _registerErrorMessage;
   String? get registerErrorMessage => _registerErrorMessage;
 
-  Future<void> registerUser(UsersRegisterModel usersModel) async {
+  Future<void> registerUser(UsersRegisterModel usersRegisterModel) async {
     try {
-      await _userRepository.userRegister(usersModel);
+      await _userRegisterRepository.userRegister(usersRegisterModel);
     } catch (error) {
       _registerErrorMessage = error.toString();
     }

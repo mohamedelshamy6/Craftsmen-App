@@ -1,19 +1,20 @@
-import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
 
+import 'package:http/http.dart' as http;
+import 'package:sw_project/models/workers/worker_register_model.dart';
 import '../../common/api_url.dart';
 
-Future workerRegister() async {
-  var endpoint = '$url/users/register';
-  var response = await http.post(Uri.parse(endpoint), body: {
-    "name": 'mohamed emad51',
-    "email": 'mohamedemad51@yahoo.com',
-    "password": 'moh11111',
-    "address": 'eltayeba nabarooo elmansoura',
-    "phone": '000001128598567820',
-    "notificationToken": 'vdfhnodfhwdhfwdfoidfodv',
-    "role": 'w',
-  });
-  print(response.headers);
-  print('------------------------------');
-  print(response.body);
+class WorkerRegisterRepository {
+  Future workerRegister(WorkerRegisterModel workerRegisterModel) async {
+    var endpoint = '$url/worker/register';
+    var response = await http.post(Uri.parse(endpoint),
+        body: jsonEncode(workerRegisterModel.toJson()),
+        headers: {
+          HttpHeaders.contentTypeHeader: "application/json",
+        });
+    print(response.headers);
+    print('------------------------------');
+    print(response.body);
+  }
 }

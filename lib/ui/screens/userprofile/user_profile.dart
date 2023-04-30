@@ -29,156 +29,163 @@ class UserProfile extends StatelessWidget {
     final userLogoutViewModel = Provider.of<UserLogoutViewModel>(context);
     return FutureBuilder(
       future: test(context),
-      builder: (context, snapshot) => Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0.0,
-          leading: const Icon(
-            Icons.arrow_back,
-            color: Color(0xff33A1FD),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'workerProfileEdit');
-              },
-              icon: const Icon(
-                Icons.settings,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0.0,
+              leading: const Icon(
+                Icons.arrow_back,
                 color: Color(0xff33A1FD),
               ),
-            ),
-            IconButton(
-              onPressed: () async {
-                var token = await getTokenFromPrefs();
-                userLogoutViewModel.logout(token!).then(
-                      (value) => Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ChangeNotifierProvider<UserLoginViewModel>(
-                            create: (_) => UserLoginViewModel(
-                              userLoginRepository: UserLoginRepository(),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'workerProfileEdit');
+                  },
+                  icon: const Icon(
+                    Icons.settings,
+                    color: Color(0xff33A1FD),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () async {
+                    var token = await getTokenFromPrefs();
+                    userLogoutViewModel.logout(token!).then(
+                          (value) => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ChangeNotifierProvider<UserLoginViewModel>(
+                                create: (_) => UserLoginViewModel(
+                                  userLoginRepository: UserLoginRepository(),
+                                ),
+                                child: const LoginScreen(id: 1),
+                              ),
                             ),
-                            child: const LoginScreen(id: 1),
                           ),
-                        ),
-                      ),
-                    );
-                if (userLogoutViewModel.logoutErrorMessage != null) {
-                  showCustomSnackBar(
-                      userLogoutViewModel.logoutErrorMessage!, context);
-                }
-                SharedPreferences pref = await SharedPreferences.getInstance();
-                pref.clear();
-              },
-              icon: const Icon(
-                Icons.logout,
-                color: Color(0xff33A1FD),
-              ),
-            ),
-          ],
-        ),
-        body: Column(
-          children: [
-            Center(
-              child: CircleAvatar(
-                radius: 50.r,
-                backgroundImage: const AssetImage(
-                  'assets/images/profile.png',
-                ),
-              ),
-            ),
-            Text(
-              snapshot.data?.name ?? '',
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Cairo',
-                color: const Color(0xff2699FB),
-              ),
-            ),
-            Text(
-              snapshot.data?.address ?? '',
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Cairo',
-                color: const Color(0xff2699FB),
-              ),
-            ),
-            SizedBox(height: 30.h),
-            Stack(
-              children: [
-                Container(
-                  width: 380.w,
-                  height: 184.h,
-                  color: Colors.white,
-                  child: const VarProfile(
-                    textOne: 'الطلبات المرسله',
-                    textTwo: 'اخرين+16',
+                        );
+                    if (userLogoutViewModel.logoutErrorMessage != null) {
+                      showCustomSnackBar(
+                          userLogoutViewModel.logoutErrorMessage!, context);
+                    }
+                    SharedPreferences pref =
+                        await SharedPreferences.getInstance();
+                    pref.clear();
+                  },
+                  icon: const Icon(
+                    Icons.logout,
+                    color: Color(0xff33A1FD),
                   ),
-                ),
-                Positioned(
-                  top: 70.h,
-                  right: 20.w,
-                  child: const UserP(),
-                ),
-                Positioned(
-                  left: 20.w,
-                  top: 70.h,
-                  child: const UserP(),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
-            Stack(
+            body: Column(
               children: [
-                Container(
-                  width: 380.w,
-                  height: 184.h,
-                  color: const Color(0xffBCE0FD),
-                  child: const VarProfile(
-                    textOne: 'الطلبات التي تم رفض التعامل معها',
-                    textTwo: 'اخرين+11',
+                Center(
+                  child: CircleAvatar(
+                    radius: 50.r,
+                    backgroundImage: const AssetImage(
+                      'assets/images/profile.png',
+                    ),
                   ),
                 ),
-                Positioned(
-                  top: 70.h,
-                  right: 20.w,
-                  child: const UserP(),
-                ),
-                Positioned(
-                  left: 20.w,
-                  top: 70.h,
-                  child: const UserP(),
-                ),
-              ],
-            ),
-            SizedBox(height: 70.h),
-            SizedBox(
-              width: 380.w,
-              height: 47.h,
-              child: ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(
-                    Color(0xff33A1FD),
-                  ),
-                ),
-                onPressed: () {},
-                child: Text(
-                  'التقديم كامل في التطبيق',
+                Text(
+                  snapshot.data?.name ?? '',
                   style: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'Cairo',
-                    fontSize: 15.sp,
+                    color: const Color(0xff2699FB),
                   ),
                 ),
-              ),
+                Text(
+                  snapshot.data?.address ?? '',
+                  style: TextStyle(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.normal,
+                    fontFamily: 'Cairo',
+                    color: const Color(0xff2699FB),
+                  ),
+                ),
+                SizedBox(height: 30.h),
+                Stack(
+                  children: [
+                    Container(
+                      width: 380.w,
+                      height: 184.h,
+                      color: Colors.white,
+                      child: const VarProfile(
+                        textOne: 'الطلبات المرسله',
+                        textTwo: 'اخرين+16',
+                      ),
+                    ),
+                    Positioned(
+                      top: 70.h,
+                      right: 20.w,
+                      child: const UserP(),
+                    ),
+                    Positioned(
+                      left: 20.w,
+                      top: 70.h,
+                      child: const UserP(),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Stack(
+                  children: [
+                    Container(
+                      width: 380.w,
+                      height: 184.h,
+                      color: const Color(0xffBCE0FD),
+                      child: const VarProfile(
+                        textOne: 'الطلبات التي تم رفض التعامل معها',
+                        textTwo: 'اخرين+11',
+                      ),
+                    ),
+                    Positioned(
+                      top: 70.h,
+                      right: 20.w,
+                      child: const UserP(),
+                    ),
+                    Positioned(
+                      left: 20.w,
+                      top: 70.h,
+                      child: const UserP(),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 70.h),
+                SizedBox(
+                  width: 380.w,
+                  height: 47.h,
+                  child: ElevatedButton(
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color(0xff33A1FD),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'التقديم كامل في التطبيق',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Cairo',
+                        fontSize: 15.sp,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          );
+        } else {
+          return const CircularProgressIndicator();
+        }
+      },
     );
   }
 }

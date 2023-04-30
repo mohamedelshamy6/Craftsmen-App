@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sw_project/repositories/users/user_login.dart';
 import 'package:sw_project/repositories/users/user_register.dart';
+import 'package:sw_project/repositories/workers/worker_logout.dart';
+import 'package:sw_project/repositories/workers/worker_register.dart';
 import 'package:sw_project/ui/screens/admin/adminScreen.dart';
 import 'package:sw_project/ui/screens/body/bottom_nav_bar.dart';
 import 'package:sw_project/ui/screens/chats/single_chat.dart';
@@ -15,6 +17,9 @@ import 'package:sw_project/ui/screens/requests/view_request.dart';
 import 'package:sw_project/ui/screens/serve/serve_one.dart';
 import 'package:sw_project/ui/screens/worker/Worker.dart';
 import 'package:sw_project/view_models/users/user_register_view_model.dart';
+import 'package:sw_project/view_models/workers/worker_logout_view_model.dart';
+import 'package:sw_project/view_models/workers/worker_register_view_model.dart';
+import 'package:sw_project/view_models/workers/worker_view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,14 +48,33 @@ class MyApp extends StatelessWidget {
             'userSignUp': (context) =>
                 ChangeNotifierProvider<UserRegisterViewModel>(
                   create: (_) => UserRegisterViewModel(
-                      userRegisterRepository: UserRegisterRepository()),
+                    userRegisterRepository: UserRegisterRepository(),
+                  ),
                   child: const UserSignUp(),
                 ),
-            'workerSignUp': (context) => const WorkerSignUp(),
+            'workerSignUp': (context) =>
+                ChangeNotifierProvider<WorkerRegisterViewModel>(
+                  create: (_) => WorkerRegisterViewModel(
+                    workerRegisterRepository: WorkerRegisterRepository(),
+                  ),
+                  child: const WorkerSignUp(),
+                ),
             'botNavBar': (context) => const BottomNavBar(),
             'services': (context) => const ServeOne(),
             'singleChat': (context) => const SingleChat(),
-            'admin': (context) => const AdminScreen(),
+            'admin': (context) => MultiProvider(
+                  providers: [
+                    ChangeNotifierProvider<WorkerLogoutViewModel>(
+                      create: (_) => WorkerLogoutViewModel(
+                        workerLogoutRepository: WorkerLogoutRepository(),
+                      ),
+                    ),
+                    ChangeNotifierProvider<WorkerViewModel>(
+                      create: (_) => WorkerViewModel()..getAllWorkers(),
+                    ),
+                  ],
+                  child: const AdminScreen(),
+                ),
             'requests': (context) => const Requests(),
             'workerProfileEdit': (context) => const WorkerProfileEdit(),
             'viewRequest': (context) => const ViewRequest(),

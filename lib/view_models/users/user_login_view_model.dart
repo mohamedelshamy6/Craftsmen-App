@@ -3,10 +3,10 @@ import 'package:sw_project/models/users/users_login_model.dart';
 import 'package:sw_project/repositories/users/user_login.dart';
 
 class UserLoginViewModel extends ChangeNotifier {
-  final UserLoginRepository _userRepository;
+  final UserLoginRepository _userLoginRepository;
 
   UserLoginViewModel({required UserLoginRepository userLoginRepository})
-      : _userRepository = userLoginRepository;
+      : _userLoginRepository = userLoginRepository;
 
   String? _loginErrorMessage;
 
@@ -14,7 +14,7 @@ class UserLoginViewModel extends ChangeNotifier {
 
   Future<void> login(UserLoginModel userLoginModel) async {
     try {
-      await _userRepository.userLogin(userLoginModel);
+      await _userLoginRepository.userLogin(userLoginModel);
     } catch (e) {
       _loginErrorMessage = e.toString();
     }

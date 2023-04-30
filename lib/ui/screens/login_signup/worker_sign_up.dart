@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sw_project/ui/widgets/tff/custom_tff.dart';
+import 'package:sw_project/view_models/workers/worker_register_view_model.dart';
 
+import '../../../common/constants.dart';
+import '../../../models/workers/worker_register_model.dart';
+import '../../../repositories/workers/worker_login.dart';
+import '../../../view_models/workers/worker_login_view_model.dart';
 import 'login_page.dart';
 
 class WorkerSignUp extends StatelessWidget {
@@ -9,6 +15,9 @@ class WorkerSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final workerRegisterViewModel =
+        Provider.of<WorkerRegisterViewModel>(context);
+
     TextEditingController nameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
@@ -106,13 +115,37 @@ class WorkerSignUp extends StatelessWidget {
                 height: 50.h,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(id: 2),
-                      ),
+                  onPressed: () async {
+                    final workerModel = WorkerRegisterModel(
+                      name: nameController.text,
+                      email: emailController.text,
+                      password: passwordController.text,
+                      address: addressController.text,
+                      role: 'w',
+                      phone: phoneController.text,
+                      notificationToken: 'abc123',
+                      jobName: jobController.text,
                     );
+                    await workerRegisterViewModel
+                        .registerWorker(workerModel)
+                        .then((value) => Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ChangeNotifierProvider<
+                                    WorkerLoginViewModel>(
+                                  create: (_) => WorkerLoginViewModel(
+                                    workerLoginRepository:
+                                        WorkerLoginRepository(),
+                                  ),
+                                  child: const LoginScreen(id: 2),
+                                ),
+                              ),
+                            ));
+                    if (workerRegisterViewModel.registerErrorMessage != null) {
+                      showCustomSnackBar(
+                          workerRegisterViewModel.registerErrorMessage!,
+                          context);
+                    }
                   },
                   child: Text(
                     "إستمرار",
