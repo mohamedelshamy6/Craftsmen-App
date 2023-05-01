@@ -4,7 +4,7 @@ import 'package:sw_project/common/api_url.dart';
 import 'package:sw_project/models/workers/worker_update_model.dart';
 
 Future updateWorker(WorkerUpdateModel workerUpdateModel, String token) async {
-  var endpoint = '$url/worker/update';
+  var endpoint = '$url/users/update';
   debugPrint(token);
   var response = await http.put(Uri.parse(endpoint), body: {
     ...workerUpdateModel.toJson()

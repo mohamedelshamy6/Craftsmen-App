@@ -15,7 +15,7 @@ import 'package:sw_project/ui/screens/page_view/page_view.dart';
 import 'package:sw_project/ui/screens/requests/requests.dart';
 import 'package:sw_project/ui/screens/requests/view_request.dart';
 import 'package:sw_project/ui/screens/serve/serve_one.dart';
-import 'package:sw_project/ui/screens/worker/Worker.dart';
+import 'package:sw_project/ui/screens/worker/worker.dart';
 import 'package:sw_project/view_models/users/user_register_view_model.dart';
 import 'package:sw_project/view_models/workers/worker_logout_view_model.dart';
 import 'package:sw_project/view_models/workers/worker_register_view_model.dart';
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     ChangeNotifierProvider<WorkerViewModel>(
-                      create: (_) => WorkerViewModel()..getAllWorkers(),
+                      create: (_) => WorkerViewModel()..getWorker(),
                     ),
                   ],
                   child: const AdminScreen(),

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sw_project/repositories/users/user_login.dart';
-import 'package:sw_project/ui/screens/login_signup/login_page.dart';
+import 'package:sw_project/ui/screens/login_signup/user_login_page.dart';
 import 'package:sw_project/ui/widgets/profile.dart';
 
 import '../../../common/constants.dart';
@@ -62,7 +62,7 @@ class UserProfile extends StatelessWidget {
                                 create: (_) => UserLoginViewModel(
                                   userLoginRepository: UserLoginRepository(),
                                 ),
-                                child: const LoginScreen(id: 1),
+                                child: const UserLoginScreen(),
                               ),
                             ),
                           ),
@@ -183,7 +183,7 @@ class UserProfile extends StatelessWidget {
             ),
           );
         } else {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

@@ -3,7 +3,7 @@ import '../../common/api_url.dart';
 
 class WorkerLogoutRepository {
   Future workerLogout(token) async {
-    var endpoint = '$url/worker/logout';
+    var endpoint = '$url/users/logout';
     var response = await http.post(Uri.parse(endpoint), headers: {
       'Authorization': 'Bearer $token',
     });

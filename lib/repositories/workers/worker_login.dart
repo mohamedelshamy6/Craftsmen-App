@@ -9,7 +9,7 @@ String savedToken = '';
 
 class WorkerLoginRepository {
   Future workerLogin(WorkerLoginModel workerLoginModel) async {
-    var endpoint = '$url/worker/login';
+    var endpoint = '$url/users/login';
     var response = await http.post(Uri.parse(endpoint),
         body: jsonEncode(workerLoginModel.toJson()),
         headers: {

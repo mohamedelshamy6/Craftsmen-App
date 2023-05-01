@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:sw_project/ui/screens/login_signup/worker_login_page.dart';
 import 'package:sw_project/ui/widgets/tff/custom_tff.dart';
 import 'package:sw_project/view_models/workers/worker_register_view_model.dart';
 
@@ -8,7 +9,6 @@ import '../../../common/constants.dart';
 import '../../../models/workers/worker_register_model.dart';
 import '../../../repositories/workers/worker_login.dart';
 import '../../../view_models/workers/worker_login_view_model.dart';
-import 'login_page.dart';
 
 class WorkerSignUp extends StatelessWidget {
   const WorkerSignUp({super.key});
@@ -97,6 +97,36 @@ class WorkerSignUp extends StatelessWidget {
                 controller: phoneController,
               ),
               SizedBox(height: 45.h),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ChangeNotifierProvider<WorkerLoginViewModel>(
+                              create: (_) => WorkerLoginViewModel(
+                                workerLoginRepository:
+                                WorkerLoginRepository(),
+                              ),
+                              child: const WorkerLoginScreen(),
+                            ),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'هل لديك حساب بالفعل؟',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15.sp,
+                      color: const Color(0xff33A1FD),
+                      fontFamily: 'Cairo',
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.h),
               SizedBox(
                 width: 215.w,
                 height: 55.h,
@@ -110,7 +140,7 @@ class WorkerSignUp extends StatelessWidget {
                       fontFamily: 'Cairo'),
                 ),
               ),
-              SizedBox(height: 80.h),
+              SizedBox(height: 60.h),
               SizedBox(
                 height: 50.h,
                 width: double.infinity,
@@ -121,26 +151,28 @@ class WorkerSignUp extends StatelessWidget {
                       email: emailController.text,
                       password: passwordController.text,
                       address: addressController.text,
-                      role: 'w',
+                      role: WorkerRegisterModel.constRole,
                       phone: phoneController.text,
                       notificationToken: 'abc123',
                       jobName: jobController.text,
                     );
                     await workerRegisterViewModel
                         .registerWorker(workerModel)
-                        .then((value) => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ChangeNotifierProvider<
-                                    WorkerLoginViewModel>(
-                                  create: (_) => WorkerLoginViewModel(
-                                    workerLoginRepository:
-                                        WorkerLoginRepository(),
-                                  ),
-                                  child: const LoginScreen(id: 2),
+                        .then(
+                          (value) => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ChangeNotifierProvider<WorkerLoginViewModel>(
+                                create: (_) => WorkerLoginViewModel(
+                                  workerLoginRepository:
+                                      WorkerLoginRepository(),
                                 ),
+                                child: const WorkerLoginScreen(),
                               ),
-                            ));
+                            ),
+                          ),
+                        );
                     if (workerRegisterViewModel.registerErrorMessage != null) {
                       showCustomSnackBar(
                           workerRegisterViewModel.registerErrorMessage!,

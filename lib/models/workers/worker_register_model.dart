@@ -10,6 +10,8 @@ class WorkerRegisterModel {
       bio,
       jobName,
       thumbnail;
+  static const String constRole='w';
+
 
   WorkerRegisterModel({
     required this.name,

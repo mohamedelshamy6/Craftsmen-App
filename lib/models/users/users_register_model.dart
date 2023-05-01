@@ -9,6 +9,7 @@ class UsersRegisterModel {
       barearToken,
       bio,
       thumbnail;
+  static const String constRole = 'u';
 
   UsersRegisterModel({
     required this.name,

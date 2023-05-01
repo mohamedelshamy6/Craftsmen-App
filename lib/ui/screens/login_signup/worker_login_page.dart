@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:sw_project/view_models/users/user_login_view_model.dart';
 import '../../../common/constants.dart';
-import '../../../models/users/users_login_model.dart';
+import '../../../models/workers/worker_login_model.dart';
+import '../../../view_models/workers/worker_login_view_model.dart';
 import '../../widgets/tff/custom_tff.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key, required this.id});
-
-  final int id;
+class WorkerLoginScreen extends StatelessWidget {
+  const WorkerLoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final userLoginViewModel = Provider.of<UserLoginViewModel>(context);
+    final workerLoginViewModel = Provider.of<WorkerLoginViewModel>(context);
+
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     return Scaffold(
@@ -102,19 +101,18 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () async {
-                      UserLoginModel userLoginModel = UserLoginModel(
+                      WorkerLoginModel workerLoginModel = WorkerLoginModel(
                         email: emailController.text,
                         password: passwordController.text,
                       );
-                      await userLoginViewModel.login(userLoginModel).then(
-                            (value) => id == 1
-                                ? Navigator.pushNamed(context, 'botNavBar')
-                                : Navigator.pushNamed(context, 'admin'),
+
+                      await workerLoginViewModel.login(workerLoginModel).then(
+                            (value) => Navigator.pushNamed(context, 'admin'),
                           );
 
-                      if (userLoginViewModel.loginErrorMessage != null) {
+                      if (workerLoginViewModel.loginErrorMessage != null) {
                         showCustomSnackBar(
-                            userLoginViewModel.loginErrorMessage!, context);
+                            workerLoginViewModel.loginErrorMessage!, context);
                       }
                     },
                   ),

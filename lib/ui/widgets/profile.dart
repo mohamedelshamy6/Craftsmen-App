@@ -29,8 +29,11 @@ class UserP extends StatelessWidget {
 }
 
 class VarProfile extends StatelessWidget {
-  const VarProfile({Key? key, required this.textOne, required this.textTwo})
-      : super(key: key);
+  const VarProfile({
+    Key? key,
+    required this.textOne,
+    required this.textTwo,
+  }) : super(key: key);
 
   final String textOne;
   final String textTwo;

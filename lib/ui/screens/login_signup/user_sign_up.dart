@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sw_project/common/constants.dart';
 import 'package:sw_project/repositories/users/user_login.dart';
-import 'package:sw_project/ui/screens/login_signup/login_page.dart';
+import 'package:sw_project/ui/screens/login_signup/user_login_page.dart';
 import 'package:sw_project/ui/widgets/tff/custom_tff.dart';
 
 import '../../../models/users/users_register_model.dart';
@@ -87,6 +87,35 @@ class UserSignUp extends StatelessWidget {
                 controller: phoneController,
               ),
               SizedBox(height: 45.h),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ChangeNotifierProvider<UserLoginViewModel>(
+                          create: (_) => UserLoginViewModel(
+                            userLoginRepository: UserLoginRepository(),
+                          ),
+                          child: const UserLoginScreen(),
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'هل لديك حساب بالفعل؟',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15.sp,
+                      color: const Color(0xff33A1FD),
+                      fontFamily: 'Cairo',
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.h),
               SizedBox(
                 width: 215.w,
                 height: 55.h,
@@ -94,13 +123,14 @@ class UserSignUp extends StatelessWidget {
                   textAlign: TextAlign.center,
                   "من خلال إنشاء حساب فإنك توافق على بنود الخدمة وخصوصية السياسة",
                   style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15.sp,
-                      color: const Color(0xff33A1FD),
-                      fontFamily: 'Cairo'),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15.sp,
+                    color: const Color(0xff33A1FD),
+                    fontFamily: 'Cairo',
+                  ),
                 ),
               ),
-              SizedBox(height: 80.h),
+              SizedBox(height: 60.h),
               SizedBox(
                 height: 50.h,
                 width: double.infinity,
@@ -111,24 +141,24 @@ class UserSignUp extends StatelessWidget {
                       email: emailController.text,
                       password: passwordController.text,
                       address: addressController.text,
-                      role: 'u',
+                      role: UsersRegisterModel.constRole,
                       phone: phoneController.text,
                       notificationToken: 'abc123',
                     );
-                    await userRegisterViewModel
-                        .registerUser(usersModel)
-                        .then((value) => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ChangeNotifierProvider<UserLoginViewModel>(
-                                  create: (_) => UserLoginViewModel(
-                                    userLoginRepository: UserLoginRepository(),
-                                  ),
-                                  child: const LoginScreen(id: 1),
+                    await userRegisterViewModel.registerUser(usersModel).then(
+                          (value) => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ChangeNotifierProvider<UserLoginViewModel>(
+                                create: (_) => UserLoginViewModel(
+                                  userLoginRepository: UserLoginRepository(),
                                 ),
+                                child: const UserLoginScreen(),
                               ),
-                            ));
+                            ),
+                          ),
+                        );
                     if (userRegisterViewModel.registerErrorMessage != null) {
                       showCustomSnackBar(
                           userRegisterViewModel.registerErrorMessage!, context);

@@ -7,7 +7,7 @@ import '../../common/api_url.dart';
 
 class WorkerRegisterRepository {
   Future workerRegister(WorkerRegisterModel workerRegisterModel) async {
-    var endpoint = '$url/worker/register';
+    var endpoint = '$url/users/register';
     var response = await http.post(Uri.parse(endpoint),
         body: jsonEncode(workerRegisterModel.toJson()),
         headers: {

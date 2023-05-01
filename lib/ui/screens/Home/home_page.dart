@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sw_project/ui/widgets/home_page/custom_list_view_1.dart';
 import 'package:sw_project/ui/widgets/tff/search_tff.dart';
+import 'package:sw_project/view_models/workers/worker_view_model.dart';
 
 import '../../widgets/home_page/custom_list_view_2.dart';
 import '../../widgets/home_page/custom_list_view_3.dart';
@@ -181,7 +183,10 @@ class HomePage extends StatelessWidget {
                       textDirection: TextDirection.rtl,
                       child: SizedBox(
                         height: 250.h,
-                        child: const CustomLV3(),
+                        child:   ChangeNotifierProvider<WorkerViewModel>(
+                          create: (_) => WorkerViewModel()..getAllWorkers(),
+                          child: const CustomLV3(),
+                        ),
                       ),
                     ),
                   ],

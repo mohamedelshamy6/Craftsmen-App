@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:sw_project/view_models/workers/single_worker_view_model.dart';
 
 class Worker extends StatelessWidget {
   const Worker({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var singleWorkerViewModel = Provider.of<SingleWorkerViewModel>(context);
+    var singleWorker = singleWorkerViewModel.workerViewModel;
+
     return Scaffold(
         backgroundColor: const Color(0xffFFFFFF),
         appBar: AppBar(
-          title: const Text(
-            'احمد طارق',
-            style: TextStyle(
+          title: Text(
+            singleWorker.name!,
+            style: const TextStyle(
                 color: Color(0xff2699FB),
                 fontFamily: 'Cairo',
                 fontSize: 24,
@@ -56,7 +61,7 @@ class Worker extends StatelessWidget {
                           Column(
                             children: [
                               Text(
-                                'مدرس فيزياء',
+                                singleWorker.jobName!,
                                 style: TextStyle(
                                     color: const Color(0xff2699FB),
                                     fontSize: 14.sp,
@@ -65,7 +70,7 @@ class Worker extends StatelessWidget {
                                 textDirection: TextDirection.rtl,
                               ),
                               Text(
-                                'المحله الكبري منشيه البكري',
+                                singleWorker.address!,
                                 style: TextStyle(
                                     color: const Color(0xff2699FB),
                                     fontSize: 10.sp,
