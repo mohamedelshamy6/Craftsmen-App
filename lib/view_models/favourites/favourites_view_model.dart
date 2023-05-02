@@ -5,6 +5,7 @@ import '../../models/favourites/favourites_model.dart';
 class FavouritesViewModel with ChangeNotifier {
   List<Favourites> favourites = [];
 
+
   void addFavourite(Favourites favourite) {
     favourites.add(favourite);
     notifyListeners();
