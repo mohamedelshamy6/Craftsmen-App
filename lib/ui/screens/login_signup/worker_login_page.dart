@@ -27,6 +27,7 @@ class WorkerLoginScreen extends StatelessWidget {
         backgroundColor: const Color(0xffFFFFFF),
       ),
       body: Form(
+        key: formKey,
         child: SingleChildScrollView(
           child: SafeArea(
             child: Padding(

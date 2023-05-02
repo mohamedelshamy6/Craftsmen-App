@@ -5,11 +5,11 @@ class UsersRegisterModel {
       address,
       phone,
       notificationToken,
-      role,
       barearToken,
       bio,
       thumbnail;
-  static const String constRole = 'u';
+  static const int constType = 0;
+  final int? type;
 
   UsersRegisterModel({
     required this.name,
@@ -18,7 +18,7 @@ class UsersRegisterModel {
     required this.address,
     required this.password,
     required this.phone,
-    this.role,
+    this.type,
     this.barearToken,
     this.bio,
     required this.notificationToken,
@@ -32,7 +32,7 @@ class UsersRegisterModel {
     data['address'] = address ?? '';
     data['phone'] = phone ?? '';
     data['notificationToken'] = notificationToken ?? '';
-    data['role'] = role ?? '';
+    data['type'] = type ?? '';
     data['bio'] = bio ?? '';
     data['thumbnail'] = thumbnail ?? '';
     return data;
@@ -49,6 +49,6 @@ class UsersRegisterModel {
         barearToken: json['barearToken'],
         address: json['address'],
         notificationToken: json['notificationToken'],
-        role: json['role']);
+        type: json['type']);
   }
 }

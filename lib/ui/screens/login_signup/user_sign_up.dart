@@ -151,7 +151,7 @@ class UserSignUp extends StatelessWidget {
                         email: emailController.text,
                         password: passwordController.text,
                         address: addressController.text,
-                        role: UsersRegisterModel.constRole,
+                        type: UsersRegisterModel.constType,
                         phone: phoneController.text,
                         notificationToken: 'abc123',
                       );

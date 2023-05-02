@@ -17,7 +17,7 @@ class WorkerSignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     final workerRegisterViewModel =
         Provider.of<WorkerRegisterViewModel>(context);
-    GlobalKey<FormState> formKey =  GlobalKey <FormState>();
+    GlobalKey<FormState> formKey = GlobalKey<FormState>();
     TextEditingController nameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
@@ -36,9 +36,9 @@ class WorkerSignUp extends StatelessWidget {
       ),
       body: SafeArea(
           child: Form(
-            key: formKey,
-            child: SingleChildScrollView(
-                  child: Padding(
+        key: formKey,
+        child: SingleChildScrollView(
+          child: Padding(
             padding: EdgeInsets.only(
               top: 45.h,
               left: 25.w,
@@ -102,7 +102,8 @@ class WorkerSignUp extends StatelessWidget {
                   kbType: TextInputType.phone,
                   id: 1,
                   controller: phoneController,
-                    validatorText: "يجب ادخال رقم الهاتف",              ),
+                  validatorText: "يجب ادخال رقم الهاتف",
+                ),
                 SizedBox(height: 45.h),
                 Center(
                   child: TextButton(
@@ -112,12 +113,11 @@ class WorkerSignUp extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) =>
                               ChangeNotifierProvider<WorkerLoginViewModel>(
-                                create: (_) => WorkerLoginViewModel(
-                                  workerLoginRepository:
-                                  WorkerLoginRepository(),
-                                ),
-                                child: const WorkerLoginScreen(),
-                              ),
+                            create: (_) => WorkerLoginViewModel(
+                              workerLoginRepository: WorkerLoginRepository(),
+                            ),
+                            child: const WorkerLoginScreen(),
+                          ),
                         ),
                       );
                     },
@@ -153,40 +153,45 @@ class WorkerSignUp extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () async {
-                      if(formKey.currentState!.validate()){}
-                      if(nameController.text.isNotEmpty&&emailController.text.isNotEmpty&&passwordController.text.isNotEmpty&&addressController.text.isNotEmpty&&jobController.text.isNotEmpty&&phoneController.text.isNotEmpty){
+                      if (formKey.currentState!.validate()) {}
+                      if (nameController.text.isNotEmpty &&
+                          emailController.text.isNotEmpty &&
+                          passwordController.text.isNotEmpty &&
+                          addressController.text.isNotEmpty &&
+                          jobController.text.isNotEmpty &&
+                          phoneController.text.isNotEmpty) {
                         final workerModel = WorkerRegisterModel(
-                        name: nameController.text,
-                        email: emailController.text,
-                        password: passwordController.text,
-                        address: addressController.text,
-                        role: WorkerRegisterModel.constRole,
-                        phone: phoneController.text,
-                        notificationToken: 'abc123',
-                        jobName: jobController.text,
-                      );
+                          name: nameController.text,
+                          email: emailController.text,
+                          password: passwordController.text,
+                          address: addressController.text,
+                          type: WorkerRegisterModel.constType,
+                          phone: phoneController.text,
+                          notificationToken: 'abc123',
+                          jobName: jobController.text,
+                        );
 
-                      await workerRegisterViewModel
-                          .registerWorker(workerModel)
-                          .then(
-                            (value) => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ChangeNotifierProvider<WorkerLoginViewModel>(
-                                  create: (_) => WorkerLoginViewModel(
-                                    workerLoginRepository:
-                                        WorkerLoginRepository(),
+                        await workerRegisterViewModel
+                            .registerWorker(workerModel)
+                            .then(
+                              (value) => Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ChangeNotifierProvider<
+                                      WorkerLoginViewModel>(
+                                    create: (_) => WorkerLoginViewModel(
+                                      workerLoginRepository:
+                                          WorkerLoginRepository(),
+                                    ),
+                                    child: const WorkerLoginScreen(),
                                   ),
-                                  child: const WorkerLoginScreen(),
                                 ),
                               ),
-                            ),
-                          );
-                      }else{}
-                      
-                      
-                      if (workerRegisterViewModel.registerErrorMessage != null) {
+                            );
+                      } else {}
+
+                      if (workerRegisterViewModel.registerErrorMessage !=
+                          null) {
                         showCustomSnackBar(
                             workerRegisterViewModel.registerErrorMessage!,
                             context);
@@ -205,9 +210,9 @@ class WorkerSignUp extends StatelessWidget {
                 )
               ],
             ),
-                  ),
-                ),
-          )),
+          ),
+        ),
+      )),
     );
   }
 }

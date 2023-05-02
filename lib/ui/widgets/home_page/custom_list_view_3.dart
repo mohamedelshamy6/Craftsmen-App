@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:sw_project/repositories/favourites/add_favourite.dart';
+import 'package:sw_project/repositories/favourites/remove_favourite.dart';
 import 'package:sw_project/ui/screens/worker/worker.dart';
 import 'package:sw_project/models/workers/worker_model.dart';
 import 'package:sw_project/view_models/favourites/favourites_view_model.dart';
+import 'package:sw_project/view_models/favourites/remove_favourite.dart';
 import 'package:sw_project/view_models/workers/single_worker_view_model.dart';
 import 'package:sw_project/view_models/workers/worker_view_model.dart';
 
@@ -127,10 +130,19 @@ class CustomLV3 extends StatelessWidget {
                                             ),
                                           ),
                                           ChangeNotifierProvider<
-                                              FavouritesViewModel>(
+                                              AddFavouriteViewModel>(
                                             create: (context) =>
-                                                FavouritesViewModel(),
-                                          )
+                                                AddFavouriteViewModel(
+                                                    addFavouriteRepository1:
+                                                        AddFavouriteRepository()),
+                                          ),
+                                          ChangeNotifierProvider<
+                                              RemoveFavouriteViewModel>(
+                                            create: (context) =>
+                                                RemoveFavouriteViewModel(
+                                                    removeFavouriteRepository:
+                                                        RemoveFavouriteRepository()),
+                                          ),
                                         ],
                                         child: const Worker(),
                                       ),

@@ -1,15 +1,22 @@
-class Favourites {
-  final int id;
-  final String name;
-  final String imageUrl;
-  final String jobName;
-  bool isFavourite;
+class FavouritesModel {
+  int? id;
+  int? workerId;
+  Map? workerInformation;
 
-  Favourites({
-    required this.jobName,
-    required this.id,
-    required this.name,
-    required this.imageUrl,
-    this.isFavourite = false,
+  FavouritesModel({
+    this.id,
+    this.workerId,
+    this.workerInformation,
   });
+
+  FavouritesModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    workerInformation=json['workerInformation'];
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'workerId': id,
+    };
+  }
 }

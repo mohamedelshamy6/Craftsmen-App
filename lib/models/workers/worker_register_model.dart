@@ -5,13 +5,12 @@ class WorkerRegisterModel {
       address,
       phone,
       notificationToken,
-      role,
       barearToken,
       bio,
       jobName,
       thumbnail;
-  static const String constRole='w';
-
+  static const int constType = 1;
+  final int? type;
 
   WorkerRegisterModel({
     required this.name,
@@ -21,7 +20,7 @@ class WorkerRegisterModel {
     required this.password,
     required this.phone,
     required this.jobName,
-    this.role,
+    this.type,
     this.barearToken,
     this.bio,
     required this.notificationToken,
@@ -35,7 +34,7 @@ class WorkerRegisterModel {
     data['address'] = address ?? '';
     data['phone'] = phone ?? '';
     data['notificationToken'] = notificationToken ?? '';
-    data['role'] = role ?? '';
+    data['type'] = type ?? '';
     data['bio'] = bio ?? '';
     data['thumbnail'] = thumbnail ?? '';
     data['jobName'] = jobName ?? '';
@@ -53,7 +52,7 @@ class WorkerRegisterModel {
         barearToken: json['barearToken'],
         address: json['address'],
         notificationToken: json['notificationToken'],
-        role: json['role'],
+        type: json['type'],
         jobName: json['jobName']);
   }
 }

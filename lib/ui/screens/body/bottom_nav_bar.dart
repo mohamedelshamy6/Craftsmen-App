@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sw_project/ui/screens/chats/chats.dart';
+import 'package:sw_project/view_models/favourites/get_favourites_view_model.dart';
+import 'package:sw_project/view_models/favourites/remove_favourite.dart';
+import '../../../repositories/favourites/remove_favourite.dart';
 import '../../../repositories/users/user_logout.dart';
 import '../../../view_models/users/user_logout_view_model.dart';
 import '../../../view_models/users/users_view_model.dart';
@@ -20,7 +23,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
   List pages = [
     const HomePage(),
-    const Favorites(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<FavouriteViewModel>(
+          create: (context) => FavouriteViewModel()..getAllFavourites(),
+        ),
+        ChangeNotifierProvider<RemoveFavouriteViewModel>(
+          create: (context) => RemoveFavouriteViewModel(
+              removeFavouriteRepository: RemoveFavouriteRepository()),
+        ),
+      ],
+      child: const Favorites(),
+    ),
     const Chats(),
     MultiProvider(
       providers: [

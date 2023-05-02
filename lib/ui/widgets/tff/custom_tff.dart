@@ -55,8 +55,8 @@ class _CustomTFFState extends State<CustomTFF> {
           }
         }
         if(widget.hintText=='العنوان'){
-          if (value.contains('@') == false){
-            return 'يجب اضافه علامه @ عند كتابه كتابه البريد الالكتروني';
+          if (value.length<15){
+            return 'يجب اضافه كلمه مرور اكبر من اوتساوى 15';
           }
         }
         if(widget.hintText=='رقم الهاتف'){
@@ -64,12 +64,7 @@ class _CustomTFFState extends State<CustomTFF> {
             return 'يجب اضافه رقم هاتف اعداده اكبر من 10';
           }
         }
-        if(widget.hintText==' المهنة'){
-          if (value=='u'||value=='w'){
-            return 'يجب اضافه مهنه';
-          }
-        }
-      
+
         return null;
       },
       obscureText: widget.id == 1
