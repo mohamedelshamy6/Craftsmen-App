@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:sw_project/models/favourites/favourites_model.dart';
 import 'package:sw_project/view_models/workers/single_worker_view_model.dart';
+
+import '../../../view_models/favourites/favourites_view_model.dart';
 
 class Worker extends StatelessWidget {
   const Worker({Key? key}) : super(key: key);
@@ -10,7 +13,8 @@ class Worker extends StatelessWidget {
   Widget build(BuildContext context) {
     var singleWorkerViewModel = Provider.of<SingleWorkerViewModel>(context);
     var singleWorker = singleWorkerViewModel.workerViewModel;
-
+    var favouriteModel = Provider.of<FavouritesViewModel>(context);
+    bool check = false;
     return Scaffold(
         backgroundColor: const Color(0xffFFFFFF),
         appBar: AppBar(
@@ -29,11 +33,26 @@ class Worker extends StatelessWidget {
           centerTitle: true,
           actions: [
             IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.favorite_border,
-                  color: Color(0xff2699FB),
-                ))
+              onPressed: () {
+                var favourite = Favourites(
+                    jobName: singleWorker.jobName!,
+                    id: singleWorker.id!,
+                    name: singleWorker.name!,
+                    imageUrl: 'assets/icon_images/Icon material-photo.png');
+                check == true
+                    ? favouriteModel.addFavourite(favourite)
+                    : favouriteModel.removeFavourite(favourite);
+              },
+              icon: check == false
+                  ? const Icon(
+                      Icons.favorite_border,
+                      color: Color(0xff2699FB),
+                    )
+                  : const Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    ),
+            ),
           ],
           backgroundColor: const Color(0xffFFFFFF),
           elevation: 0.0,

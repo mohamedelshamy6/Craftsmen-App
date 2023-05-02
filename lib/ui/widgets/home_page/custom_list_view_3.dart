@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sw_project/ui/screens/worker/worker.dart';
 import 'package:sw_project/models/workers/worker_model.dart';
+import 'package:sw_project/view_models/favourites/favourites_view_model.dart';
 import 'package:sw_project/view_models/workers/single_worker_view_model.dart';
 import 'package:sw_project/view_models/workers/worker_view_model.dart';
 
@@ -117,12 +118,21 @@ class CustomLV3 extends StatelessWidget {
                                   onPressed: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
+                                      builder: (context) => MultiProvider(
+                                        providers: [
                                           Provider<SingleWorkerViewModel>(
+                                            create: (_) =>
+                                                SingleWorkerViewModel(
+                                              workerViewModel: data[index],
+                                            ),
+                                          ),
+                                          ChangeNotifierProvider<
+                                              FavouritesViewModel>(
+                                            create: (context) =>
+                                                FavouritesViewModel(),
+                                          )
+                                        ],
                                         child: const Worker(),
-                                        create: (_) => SingleWorkerViewModel(
-                                          workerViewModel: data[index],
-                                        ),
                                       ),
                                     ),
                                   ),
